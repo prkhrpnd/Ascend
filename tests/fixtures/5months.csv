@@ -1,0 +1,251 @@
+date,narration,amount_paise,type,balance_paise
+2026-05-01,Transfer from Family,82677,credit,6082677
+2026-05-01,ATM Withdrawal,61761,debit,6020916
+2026-05-02,Electricity Bill,58921,debit,5961995
+2026-05-03,Rent Payment,42594,debit,5919401
+2026-05-04,Freelance Payment,42323,credit,5961724
+2026-05-04,Online Shopping,48983,debit,5912741
+2026-05-04,UPI Payment,44013,debit,5868728
+2026-05-05,Clothing Store,33364,debit,5835364
+2026-05-05,Grocery Store,24846,debit,5810518
+2026-05-06,Transport,31235,debit,5779283
+2026-05-07,Insurance Premium,8518,debit,5770765
+2026-05-07,Pharmacy,18458,debit,5752307
+2026-05-07,Rent Payment,24137,debit,5728170
+2026-05-09,Insurance Premium,19876,debit,5708294
+2026-05-10,Pharmacy,42594,debit,5665700
+2026-05-11,ATM Withdrawal,41173,debit,5624527
+2026-05-11,Food Delivery,9229,debit,5615298
+2026-05-12,Medical Expense,17747,debit,5597551
+2026-05-13,Client Payment,24606,credit,5622157
+2026-05-13,Pharmacy,35495,debit,5586662
+2026-05-14,Client Payment,25591,credit,5612253
+2026-05-14,Salary Credit,10826,credit,5623079
+2026-05-15,Clothing Store,44723,debit,5578356
+2026-05-16,ATM Withdrawal,52531,debit,5525825
+2026-05-17,Refund Received,84645,credit,5610470
+2026-05-17,Electricity Bill,27686,debit,5582784
+2026-05-17,Mobile Recharge,24137,debit,5558647
+2026-05-18,Transfer from Family,84646,credit,5643293
+2026-05-18,Pharmacy,17747,debit,5625546
+2026-05-19,Education Fee,68149,debit,5557397
+2026-05-20,Insurance Premium,68149,debit,5489248
+2026-05-21,Freelance Payment,59056,credit,5548304
+2026-05-21,Transfer from Family,67913,credit,5616217
+2026-05-22,Food Delivery,39753,debit,5576464
+2026-05-22,Insurance Premium,51112,debit,5525352
+2026-05-23,Grocery Store,42593,debit,5482759
+2026-05-23,Mobile Recharge,48272,debit,5434487
+2026-05-24,Fuel Purchase,21297,debit,5413190
+2026-05-24,Subscription,59630,debit,5353560
+2026-05-25,ATM Withdrawal,3550,debit,5350010
+2026-05-25,UPI Payment,42594,debit,5307416
+2026-05-26,Client Payment,17717,credit,5325133
+2026-05-26,Clothing Store,35495,debit,5289638
+2026-05-26,Household Items,37624,debit,5252014
+2026-05-26,Online Shopping,31235,debit,5220779
+2026-05-26,Transport,61051,debit,5159728
+2026-05-28,Subscription,36915,debit,5122813
+2026-05-30,Rent Payment,48273,debit,5074540
+2026-05-31,Medical Expense,31236,debit,5043304
+2026-05-31,Subscription,43304,debit,5000000
+2026-06-01,UPI Received,14125,credit,5014125
+2026-06-02,Cash Deposit,83804,credit,5097929
+2026-06-04,Education Fee,12184,debit,5085745
+2026-06-04,Medical Expense,6769,debit,5078976
+2026-06-04,Subscription,64306,debit,5014670
+2026-06-05,Client Payment,29190,credit,5043860
+2026-06-05,Household Items,48737,debit,4995123
+2026-06-05,Internet Bill,39937,debit,4955186
+2026-06-05,Internet Bill,65658,debit,4889528
+2026-06-05,Restaurant Payment,41968,debit,4847560
+2026-06-05,Subscription,29783,debit,4817777
+2026-06-07,Clothing Store,39936,debit,4777841
+2026-06-07,Medical Expense,56182,debit,4721659
+2026-06-07,Pharmacy,38584,debit,4683075
+2026-06-08,UPI Payment,38584,debit,4644491
+2026-06-08,UPI Payment,53475,debit,4591016
+2026-06-08,UPI Payment,42645,debit,4548371
+2026-06-10,Interest Credit,46139,credit,4594510
+2026-06-10,Clothing Store,53475,debit,4541035
+2026-06-10,Household Items,52120,debit,4488915
+2026-06-11,Mobile Recharge,9477,debit,4479438
+2026-06-12,Transfer from Family,36724,credit,4516162
+2026-06-12,Water Bill,33167,debit,4482995
+2026-06-13,UPI Received,16007,credit,4499002
+2026-06-13,Mobile Recharge,3385,debit,4495617
+2026-06-13,Online Shopping,48736,debit,4446881
+2026-06-14,Pharmacy,67690,debit,4379191
+2026-06-15,Food Delivery,34522,debit,4344669
+2026-06-15,Grocery Store,29783,debit,4314886
+2026-06-15,Medical Expense,60920,debit,4253966
+2026-06-15,Rent Payment,20984,debit,4232982
+2026-06-17,UPI Received,62147,credit,4295129
+2026-06-17,Restaurant Payment,41968,debit,4253161
+2026-06-17,UPI Payment,16922,debit,4236239
+2026-06-18,Client Payment,58380,credit,4294619
+2026-06-18,Fuel Purchase,14891,debit,4279728
+2026-06-20,Freelance Payment,72505,credit,4352233
+2026-06-20,Transfer from Family,80979,credit,4433212
+2026-06-22,Rent Payment,44675,debit,4388537
+2026-06-23,Restaurant Payment,61598,debit,4326939
+2026-06-24,Grocery Store,20306,debit,4306633
+2026-06-25,Mobile Recharge,25045,debit,4281588
+2026-06-26,Clothing Store,23691,debit,4257897
+2026-06-26,Clothing Store,58889,debit,4199008
+2026-06-26,Food Delivery,58213,debit,4140795
+2026-06-27,Electricity Bill,2708,debit,4138087
+2026-06-27,Food Delivery,47383,debit,4090704
+2026-06-27,Pharmacy,39937,debit,4050767
+2026-06-28,Electricity Bill,5416,debit,4045351
+2026-06-29,Rent Payment,45351,debit,4000000
+2026-07-01,Mobile Recharge,53444,debit,3946556
+2026-07-02,Insurance Premium,25654,debit,3920902
+2026-07-02,Online Shopping,23515,debit,3897387
+2026-07-03,Pharmacy,14251,debit,3883136
+2026-07-05,Interest Credit,26365,credit,3909501
+2026-07-07,Medical Expense,34204,debit,3875297
+2026-07-07,Water Bill,12114,debit,3863183
+2026-07-09,Clothing Store,47031,debit,3816152
+2026-07-09,Mobile Recharge,43467,debit,3772685
+2026-07-10,Pharmacy,24228,debit,3748457
+2026-07-11,Grocery Store,70547,debit,3677910
+2026-07-11,Grocery Store,57719,debit,3620191
+2026-07-11,Insurance Premium,4276,debit,3615915
+2026-07-11,UPI Payment,71259,debit,3544656
+2026-07-13,Interest Credit,59323,credit,3603979
+2026-07-14,Client Payment,36723,credit,3640702
+2026-07-14,Education Fee,2850,debit,3637852
+2026-07-14,Mobile Recharge,47743,debit,3590109
+2026-07-14,Restaurant Payment,48457,debit,3541652
+2026-07-15,Transfer from Family,72505,credit,3614157
+2026-07-15,Water Bill,57007,debit,3557150
+2026-07-16,Fuel Purchase,59144,debit,3498006
+2026-07-17,Online Shopping,29217,debit,3468789
+2026-07-17,Pharmacy,9976,debit,3458813
+2026-07-18,Electricity Bill,6414,debit,3452399
+2026-07-18,Mobile Recharge,68409,debit,3383990
+2026-07-18,Subscription,58432,debit,3325558
+2026-07-18,UPI Payment,60571,debit,3264987
+2026-07-19,Cash Deposit,75329,credit,3340316
+2026-07-19,Client Payment,73446,credit,3413762
+2026-07-19,Refund Received,80038,credit,3493800
+2026-07-19,Clothing Store,69121,debit,3424679
+2026-07-19,Water Bill,32066,debit,3392613
+2026-07-21,Subscription,64845,debit,3327768
+2026-07-21,Transport,28504,debit,3299264
+2026-07-23,Household Items,57719,debit,3241545
+2026-07-23,Pharmacy,31354,debit,3210191
+2026-07-24,Rent Payment,30642,debit,3179549
+2026-07-25,Client Payment,1883,credit,3181432
+2026-07-25,Grocery Store,10689,debit,3170743
+2026-07-26,Salary Credit,72505,credit,3243248
+2026-07-26,Clothing Store,22090,debit,3221158
+2026-07-26,Rent Payment,55582,debit,3165576
+2026-07-26,Subscription,37055,debit,3128521
+2026-07-27,Salary Credit,1883,credit,3130404
+2026-07-27,Transport,712,debit,3129692
+2026-07-28,Medical Expense,49168,debit,3080524
+2026-07-29,Grocery Store,12115,debit,3068409
+2026-07-31,Medical Expense,45606,debit,3022803
+2026-07-31,Subscription,22803,debit,3000000
+2026-08-01,Pharmacy,5319,debit,2994681
+2026-08-03,ATM Withdrawal,45213,debit,2949468
+2026-08-03,Education Fee,16843,debit,2932625
+2026-08-04,Transfer from Family,64844,credit,2997469
+2026-08-05,Subscription,20390,debit,2977079
+2026-08-06,ATM Withdrawal,4433,debit,2972646
+2026-08-06,ATM Withdrawal,68262,debit,2904384
+2026-08-07,Transfer from Family,75000,credit,2979384
+2026-08-07,Online Shopping,7979,debit,2971405
+2026-08-08,ATM Withdrawal,86880,debit,2884525
+2026-08-08,Fuel Purchase,12411,debit,2872114
+2026-08-09,Insurance Premium,57625,debit,2814489
+2026-08-09,Rent Payment,29256,debit,2785233
+2026-08-10,Refund Received,20312,credit,2805545
+2026-08-10,Food Delivery,67375,debit,2738170
+2026-08-10,Grocery Store,18618,debit,2719552
+2026-08-11,Restaurant Payment,5320,debit,2714232
+2026-08-12,Medical Expense,15071,debit,2699161
+2026-08-13,Client Payment,10938,credit,2710099
+2026-08-13,Education Fee,15071,debit,2695028
+2026-08-13,Mobile Recharge,61171,debit,2633857
+2026-08-14,UPI Received,77343,credit,2711200
+2026-08-14,ATM Withdrawal,6205,debit,2704995
+2026-08-14,Fuel Purchase,73582,debit,2631413
+2026-08-17,Rent Payment,69148,debit,2562265
+2026-08-17,Subscription,71809,debit,2490456
+2026-08-18,Transfer from Family,35157,credit,2525613
+2026-08-18,Insurance Premium,64717,debit,2460896
+2026-08-19,Rent Payment,42554,debit,2418342
+2026-08-19,Restaurant Payment,10638,debit,2407704
+2026-08-20,Education Fee,31029,debit,2376675
+2026-08-22,Education Fee,8865,debit,2367810
+2026-08-23,Refund Received,70313,credit,2438123
+2026-08-23,Medical Expense,23937,debit,2414186
+2026-08-24,Restaurant Payment,62057,debit,2352129
+2026-08-25,Cash Deposit,72656,credit,2424785
+2026-08-25,Freelance Payment,63281,credit,2488066
+2026-08-25,Education Fee,45212,debit,2442854
+2026-08-25,Water Bill,40780,debit,2402074
+2026-08-26,Insurance Premium,64717,debit,2337357
+2026-08-27,Internet Bill,46985,debit,2290372
+2026-08-27,Medical Expense,41666,debit,2248706
+2026-08-27,Restaurant Payment,56737,debit,2191969
+2026-08-28,Cash Deposit,10156,credit,2202125
+2026-08-28,Internet Bill,7979,debit,2194146
+2026-08-30,Fuel Purchase,4432,debit,2189714
+2026-08-30,Household Items,87765,debit,2101949
+2026-08-30,Insurance Premium,82446,debit,2019503
+2026-08-30,Internet Bill,11524,debit,2007979
+2026-08-30,Transport,7979,debit,2000000
+2026-09-01,Interest Credit,56008,credit,2056008
+2026-09-01,Electricity Bill,7130,debit,2048878
+2026-09-01,Online Shopping,34934,debit,2013944
+2026-09-02,Transfer from Family,43788,credit,2057732
+2026-09-02,Mobile Recharge,11406,debit,2046326
+2026-09-02,Rent Payment,59174,debit,1987152
+2026-09-03,Subscription,29230,debit,1957922
+2026-09-04,Fuel Purchase,64163,debit,1893759
+2026-09-04,Mobile Recharge,14258,debit,1879501
+2026-09-05,Insurance Premium,17823,debit,1861678
+2026-09-06,Refund Received,19349,credit,1881027
+2026-09-06,Grocery Store,20674,debit,1860353
+2026-09-07,UPI Received,14256,credit,1874609
+2026-09-07,Mobile Recharge,27805,debit,1846804
+2026-09-07,Online Shopping,41349,debit,1805455
+2026-09-08,Electricity Bill,5703,debit,1799752
+2026-09-08,Electricity Bill,4990,debit,1794762
+2026-09-09,Food Delivery,37786,debit,1756976
+2026-09-09,Mobile Recharge,1425,debit,1755551
+2026-09-10,UPI Payment,9981,debit,1745570
+2026-09-11,Food Delivery,67729,debit,1677841
+2026-09-12,Client Payment,6110,credit,1683951
+2026-09-12,Food Delivery,56321,debit,1627630
+2026-09-12,Subscription,9269,debit,1618361
+2026-09-13,Insurance Premium,55608,debit,1562753
+2026-09-14,Mobile Recharge,10694,debit,1552059
+2026-09-14,UPI Payment,58460,debit,1493599
+2026-09-15,Food Delivery,27092,debit,1466507
+2026-09-15,Insurance Premium,40636,debit,1425871
+2026-09-16,Rent Payment,10693,debit,1415178
+2026-09-17,UPI Payment,58460,debit,1356718
+2026-09-19,ATM Withdrawal,64877,debit,1291841
+2026-09-19,Restaurant Payment,54895,debit,1236946
+2026-09-20,Food Delivery,44914,debit,1192032
+2026-09-21,ATM Withdrawal,68442,debit,1123590
+2026-09-22,Grocery Store,65590,debit,1058000
+2026-09-22,Transport,21388,debit,1036612
+2026-09-22,Water Bill,48479,debit,988133
+2026-09-23,Fuel Purchase,54896,debit,933237
+2026-09-24,Salary Credit,83503,credit,1016740
+2026-09-24,Electricity Bill,6416,debit,1010324
+2026-09-24,Restaurant Payment,50618,debit,959706
+2026-09-25,Freelance Payment,68229,credit,1027935
+2026-09-26,Interest Credit,89613,credit,1117548
+2026-09-27,Household Items,67729,debit,1049819
+2026-09-28,Insurance Premium,50617,debit,999202
+2026-09-28,Medical Expense,71292,debit,927910
+2026-09-29,Interest Credit,67210,credit,995120
+2026-09-29,UPI Received,51934,credit,1047054
+2026-09-29,Insurance Premium,47054,debit,1000000

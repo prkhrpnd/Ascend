@@ -1,0 +1,102 @@
+[
+  {
+    "id": "credit-score-basics",
+    "section": "Credit basics",
+    "title": "What is a credit score and why does it matter?",
+    "takeaway": "A credit score is a 3-digit summary of how reliably you repay borrowed money.",
+    "body": "When you apply for a two-wheeler loan or rent a flat, landlords and lenders check your credit history. Without a history, you are invisible to formal banks. Under 10% of young Indians aged 18 to 24 have any credit history. Building a file early with small starter lines prevents rejections when you start your career.",
+    "example": "Borrowing ₹500 and repaying on time logs a positive tick on your bureau report.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 50
+  },
+  {
+    "id": "credit-bureau-role",
+    "section": "Credit basics",
+    "title": "What does a credit bureau actually do?",
+    "takeaway": "Bureaus do not approve loans: they only maintain your repayment record.",
+    "body": "Credit bureaus (such as CIBIL, Experian, CRIF, and Equifax in India) are licensed data repositories. Every regulated lender sends them monthly reports on your accounts: your limit, amount drawn, and whether you paid on time or late. They do not lend money or decide who gets credit.",
+    "example": "When LendPartner reports your on-time AutoPay of ₹500, bureaus add a positive payment flag.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 55
+  },
+  {
+    "id": "understanding-utilisation",
+    "section": "Credit basics",
+    "title": "Utilisation in plain words",
+    "takeaway": "Keeping your credit balance under 50% of your limit shows strong control.",
+    "body": "Credit utilisation is simply the percentage of your approved limit that you are currently using. If your limit is ₹1,000 and your balance is ₹800, your utilisation is 80%. High utilisation signals to future lenders that you are stretched thin. Aim to keep it below 50% across cycles.",
+    "example": "On a ₹500 limit, drawing ₹250 keeps your utilisation at 50%.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 45
+  },
+  {
+    "id": "monthly-interest-meaning",
+    "section": "Understanding cost",
+    "title": "What does 1.5% a month really mean over a year?",
+    "takeaway": "Small monthly percentages add up to substantial annual rates.",
+    "body": "A rate of 1.5% per 30-day cycle sounds tiny, but 1.5% multiplied by 12 months is about 18% a year before compounding. Informal lending apps often disguise rates by quoting 0.1% per day, which works out to 36% or more each year. Always ask for the annualised percentage rate (APR) in rupees before borrowing.",
+    "example": "On a ₹1,000 balance held for 30 days, 1.5% interest is ₹15.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 60
+  },
+  {
+    "id": "late-fee-vs-penalty",
+    "section": "Understanding cost",
+    "title": "Late fee versus compounding penalty interest",
+    "takeaway": "A flat fee hurts once: compounding penalty interest triggers a debt spiral.",
+    "body": "Some predatory apps charge compounding daily penalty interest when you miss a date, causing a ₹500 debt to balloon into thousands. Ascend policy requires partner lenders to charge only a one-time flat ₹50 late fee with zero compounding interest. Furthermore, Ascend earns exactly ₹0 from late fees so incentives stay aligned.",
+    "example": "A missed ₹500 repayment incurs a flat ₹50 fee, never compounding daily charges.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 55
+  },
+  {
+    "id": "low-balance-week",
+    "section": "Everyday money",
+    "title": "Navigating the low-balance week",
+    "takeaway": "The 7 days before your monthly allowance lands carry the highest overdraft risk.",
+    "body": "For students in Jaipur and across India, monthly allowances land on the 1st, but living costs peak in the third week. Our data shows balances frequently dip to their lowest points between the 24th and 30th. Ascend sets limits strictly below this pre-allowance low point so you never rely on debt to survive.",
+    "example": "If your lowest week balance is ₹950, your safety buffer of ₹300 leaves ₹650 safe capacity.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 50
+  },
+  {
+    "id": "harassment-recovery-rights",
+    "section": "Borrowing safely",
+    "title": "What a lender cannot do in recovery",
+    "takeaway": "RBI guidelines strictly prohibit accessing your contacts, gallery, or harassing family.",
+    "body": "Regulated lenders must follow RBI Fair Practices Codes. Lenders cannot call you before 8 AM or after 7 PM, cannot contact friends or parents, cannot use abusive language, and cannot access phone permissions like contacts or photos. If an app requests contact permissions to approve a loan, uninstall it immediately.",
+    "example": "Ascend never requests contacts, SMS, or photos: only bank transaction data with consent.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 60
+  },
+  {
+    "id": "first-salary-checklist",
+    "section": "Your first job",
+    "title": "First salary checklist for campus graduates",
+    "takeaway": "Set up AutoPay on day 2 of salary and build your emergency 3-month buffer.",
+    "body": "When your first job offer starts, do three things in month 1: (1) align all utility and rent due dates to 2 days after salary day; (2) keep 1 month of living costs in liquid savings; (3) pay off starter credit on time so your bureau score crosses 750 before applying for rental deposits or vehicle loans.",
+    "example": "With a ₹25,000 stipend landing on the 1st, schedule your credit repayment on the 3rd.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 50
+  },
+  {
+    "id": "investing-risk-diversification",
+    "section": "Investing basics",
+    "title": "Risk and why a friend's 2x tip is not free money",
+    "takeaway": "Higher promised returns always come with higher risk of total loss.",
+    "body": "Social media finfluencers often promote quick doubling schemes or meme coins. In financial reality, high returns require high risk. If an investment claims guaranteed 20%+ returns without risk, it is likely unregulated or fraudulent. Build an emergency buffer and clear all debt before thinking about investing.",
+    "example": "Losing ₹5,000 on a speculative tip wipes out months of careful student savings.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 55
+  },
+  {
+    "id": "myth-fact-finfluencers",
+    "section": "Myth or Fact",
+    "title": "Myth: Credit cards and credit lines are always traps",
+    "takeaway": "Fact: Credit is dangerous when used for lifestyle inflation, but powerful for building history.",
+    "body": "Myth: Never take any credit line because parents say debt is bad. Fact: Uncontrolled debt at 40% interest is bad. But a ₹500 line repaid on time with AutoPay costs ₹0 in cycle 1 and builds the verified paper trail required to lease an apartment or get an educational loan later.",
+    "example": "Responsible on-time repayment of ₹500 demonstrates discipline to regulated institutions.",
+    "sourceNote": "Verify against official RBI/SEBI/NISM material before relying on this",
+    "readSeconds": 50
+  }
+]

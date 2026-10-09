@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Polished modern fintech palette: light blue, white, and subtle navy */
+  --paper: #F0F7FF;
+  --paper-2: #FFFFFF;
+  --ink: #0F172A;
+  --ink-soft: #475569;
+  --vermilion: #E11D48;
+  --marigold: #F59E0B;
+  --ledger-green: #059669;
+  --rule: #E2E8F0;
+}
+
+.dark {
+  --paper: #0B1120;
+  --paper-2: #1E293B;
+  --ink: #F8FAFC;
+  --ink-soft: #94A3B8;
+  --vermilion: #FB7185;
+  --marigold: #FBBF24;
+  --ledger-green: #10B981;
+  --rule: #334155;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle modern grid pattern */
+.fintech-grid {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.dark .fintech-grid {
+  background-image: radial-gradient(rgba(248, 250, 252, 0.05) 1px, transparent 0);
+}
+
+/* Card styling utilities */
+.fintech-card {
+  background-color: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04);
+}
+
+/* Clean double ruled totals */
+.double-rule-total {
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--rule);
+}
+
+/* Stamp signature animation */
+@keyframes stamp-thud {
+  0% {
+    opacity: 0;
+    transform: scale(1.8) rotate(-12deg);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(0.96) rotate(-5deg);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.02) rotate(-6deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-6deg);
+  }
+}
+
+.ink-stamp-animate {
+  animation: stamp-thud 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ink-stamp-animate {
+    animation: none;
+    opacity: 1;
+    transform: scale(1) rotate(-6deg);
+  }
+}
+
+/* Highlight circle animation */
+@keyframes draw-circle {
+  0% {
+    stroke-dashoffset: 400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.rent-circled-animate {
+  stroke-dasharray: 400;
+  animation: draw-circle 0.8s ease-out forwards;
+}
+
+/* Hatch pattern for stress markers */
+.red-hatch-pattern {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(225, 29, 72, 0.08),
+    rgba(225, 29, 72, 0.08) 6px,
+    rgba(225, 29, 72, 0.16) 6px,
+    rgba(225, 29, 72, 0.16) 12px
+  );
+}
