@@ -153,19 +153,19 @@ export default function OverviewPage() {
   }[healthScore.rating];
 
   const ratingRingColor = {
-    Excellent: "#10B981", // emerald
-    Good: "#3B82F6", // blue
-    Fair: "#F59E0B", // amber
-    "Needs Attention": "#EF4444", // rose
-    "Insufficient Data": "#9CA3AF", // slate
+    Excellent: "#16a34a",
+    Good: "#435ee5",
+    Fair: "#ff9500",
+    "Needs Attention": "#9e0a0a",
+    "Insufficient Data": "#9e9e96",
   }[healthScore.rating];
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto py-2">
       {/* Header Bar */}
-      <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-white rounded-2xl border border-rule p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-mono">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-ink text-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Profile: {profile.name}</span>
             <SimulationBadge label="DEMO" size="sm" />
@@ -184,15 +184,15 @@ export default function OverviewPage() {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
           <NextLink
             href="/statements"
-            className="px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-rule text-xs font-medium text-ink flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            className="px-4 py-2.5 rounded-full bg-slate-200/80 hover:bg-slate-300/80 border border-slate-300 text-xs font-bold text-ink flex items-center justify-center gap-2 transition-colors cursor-pointer"
           >
-            <FileSpreadsheet className="w-4 h-4 text-blue-600" />
+            <FileSpreadsheet className="w-4 h-4 text-ink" />
             <span>Manage Bank Statements</span>
           </NextLink>
 
           <NextLink
             href="/assess"
-            className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-mono font-bold shadow-sm flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            className="px-5 py-2.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
           >
             <ShieldCheck className="w-4 h-4" />
             <span>Evaluate Starter Credit</span>
@@ -214,10 +214,10 @@ export default function OverviewPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
           {/* Total Money Credited */}
-          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule shadow-sm space-y-1.5 box-border">
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule space-y-1.5 box-border">
             <div className="flex items-center justify-between text-xs text-ink-soft">
               <span className="font-medium">Total Credited</span>
-              <span className="p-1 rounded-md bg-emerald-50 text-emerald-600">
+              <span className="p-1 rounded-full bg-emerald-50 text-emerald-600">
                 <TrendingUp className="w-3.5 h-3.5" />
               </span>
             </div>
@@ -228,30 +228,30 @@ export default function OverviewPage() {
           </div>
 
           {/* Total Money Debited */}
-          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule shadow-sm space-y-1.5 box-border">
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule space-y-1.5 box-border">
             <div className="flex items-center justify-between text-xs text-ink-soft">
               <span className="font-medium">Total Debited</span>
-              <span className="p-1 rounded-md bg-rose-50 text-rose-600">
+              <span className="p-1 rounded-full bg-rose-50 text-vermilion">
                 <TrendingDown className="w-3.5 h-3.5" />
               </span>
             </div>
-            <p className="font-mono font-bold text-lg sm:text-xl text-rose-600 truncate">
+            <p className="font-mono font-bold text-lg sm:text-xl text-vermilion truncate">
               {analytics ? formatPaise(analytics.totalOutflowPaise) : "₹0"}
             </p>
             <p className="text-[10px] text-ink-soft">All expenses & withdrawals</p>
           </div>
 
           {/* Net Cash Flow */}
-          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule shadow-sm space-y-1.5 box-border">
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule space-y-1.5 box-border">
             <div className="flex items-center justify-between text-xs text-ink-soft">
               <span className="font-medium">Net Cash Flow</span>
-              <span className="p-1 rounded-md bg-blue-50 text-blue-600">
+              <span className="p-1 rounded-full bg-slate-100 text-ink">
                 <Wallet className="w-3.5 h-3.5" />
               </span>
             </div>
             <p
               className={`font-mono font-bold text-lg sm:text-xl truncate ${
-                analytics && analytics.netCashFlowPaise >= 0 ? "text-emerald-700" : "text-rose-700"
+                analytics && analytics.netCashFlowPaise >= 0 ? "text-emerald-700" : "text-vermilion"
               }`}
             >
               {analytics ? (
@@ -269,10 +269,10 @@ export default function OverviewPage() {
           </div>
 
           {/* Number of Transactions Analyzed */}
-          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule shadow-sm space-y-1.5 box-border">
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule space-y-1.5 box-border">
             <div className="flex items-center justify-between text-xs text-ink-soft">
               <span className="font-medium">Transactions</span>
-              <span className="p-1 rounded-md bg-slate-50 text-slate-600">
+              <span className="p-1 rounded-full bg-slate-100 text-slate-600">
                 <Layers className="w-3.5 h-3.5" />
               </span>
             </div>
@@ -283,10 +283,10 @@ export default function OverviewPage() {
           </div>
 
           {/* Selected Statement Period */}
-          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule shadow-sm space-y-1.5 col-span-2 md:col-span-1 box-border">
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule space-y-1.5 col-span-2 md:col-span-1 box-border">
             <div className="flex items-center justify-between text-xs text-ink-soft">
               <span className="font-medium">Statement Period</span>
-              <span className="p-1 rounded-md bg-slate-50 text-slate-600">
+              <span className="p-1 rounded-full bg-slate-100 text-slate-600">
                 <Calendar className="w-3.5 h-3.5" />
               </span>
             </div>
@@ -303,7 +303,7 @@ export default function OverviewPage() {
       {/* Middle Section: Financial Health Score & Key Insights */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Component B: Financial Health Score (7 Cols) */}
-        <div className="lg:col-span-7 bg-white rounded-2xl border border-rule shadow-sm p-6 sm:p-8 space-y-6">
+        <div className="lg:col-span-7 bg-white rounded-2xl border border-rule p-6 sm:p-8 space-y-6">
           <div className="flex items-start justify-between gap-4 border-b border-rule pb-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
@@ -333,7 +333,7 @@ export default function OverviewPage() {
                   cy="50"
                   r="40"
                   fill="transparent"
-                  stroke="#E2E8F0"
+                  stroke="var(--rule)"
                   strokeWidth="8"
                 />
                 {/* Score Progress Ring */}
@@ -390,19 +390,19 @@ export default function OverviewPage() {
           {/* Subscores Progress Bars */}
           {healthScore.isAvailable && (
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-rule/60 text-xs font-mono">
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/60 space-y-1">
+              <div className="p-2.5 rounded-2xl bg-slate-100 border border-slate-200 space-y-1">
                 <span className="text-[10px] text-ink-soft block">Cash Surplus</span>
                 <span className="font-bold text-ink">{healthScore.subScores.cashFlowSurplus}/35</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/60 space-y-1">
+              <div className="p-2.5 rounded-2xl bg-slate-100 border border-slate-200 space-y-1">
                 <span className="text-[10px] text-ink-soft block">Fixed Ratio</span>
                 <span className="font-bold text-ink">{healthScore.subScores.fixedObligationRatio}/25</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/60 space-y-1">
+              <div className="p-2.5 rounded-2xl bg-slate-100 border border-slate-200 space-y-1">
                 <span className="text-[10px] text-ink-soft block">Consistency</span>
                 <span className="font-bold text-ink">{healthScore.subScores.periodConsistency}/25</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/60 space-y-1">
+              <div className="p-2.5 rounded-2xl bg-slate-100 border border-slate-200 space-y-1">
                 <span className="text-[10px] text-ink-soft block">Discipline</span>
                 <span className="font-bold text-ink">{healthScore.subScores.spendingDiscipline}/15</span>
               </div>
@@ -410,14 +410,14 @@ export default function OverviewPage() {
           )}
 
           {/* Regulatory & Bureau Disclosures */}
-          <div className="p-3 rounded-xl bg-slate-50 border border-rule/80 text-[11px] text-ink-soft flex items-start gap-2 leading-relaxed">
+          <div className="p-3 rounded-2xl bg-slate-100 border border-rule text-[11px] text-ink-soft flex items-start gap-2 leading-relaxed">
             <Info className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
             <span>{healthScore.disclaimer}</span>
           </div>
         </div>
 
         {/* Component C: Key Insights (5 Cols) */}
-        <div className="lg:col-span-5 bg-white rounded-2xl border border-rule shadow-sm p-6 sm:p-8 space-y-5 flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-white rounded-2xl border border-rule p-6 sm:p-8 space-y-5 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="border-b border-rule pb-3">
               <h2 className="text-base sm:text-lg font-serif font-bold text-ink">
@@ -433,21 +433,21 @@ export default function OverviewPage() {
                 {keyInsights.map((insight, idx) => (
                   <div
                     key={insight.id || idx}
-                    className={`p-3.5 rounded-xl border text-xs leading-relaxed flex items-start gap-2.5 ${
+                    className={`p-3.5 rounded-2xl border text-xs leading-relaxed flex items-start gap-2.5 ${
                       insight.type === "positive"
                         ? "bg-emerald-50/60 border-emerald-200 text-emerald-950"
                         : insight.type === "warning"
                         ? "bg-amber-50/60 border-amber-200 text-amber-950"
-                        : "bg-slate-50 border-slate-200 text-slate-900"
+                        : "bg-slate-100 border-slate-200 text-slate-900"
                     }`}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0 mt-1.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-ink shrink-0 mt-1.5" />
                     <span className="font-medium">{insight.text}</span>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="p-6 text-center text-xs text-ink-soft bg-slate-50 rounded-xl border border-rule">
+              <div className="p-6 text-center text-xs text-ink-soft bg-slate-100 rounded-2xl border border-rule">
                 Upload a statement to generate data-backed insights.
               </div>
             )}
@@ -456,7 +456,7 @@ export default function OverviewPage() {
           <div className="pt-3 border-t border-rule text-right">
             <NextLink
               href="/spending"
-              className="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1 cursor-pointer"
+              className="text-xs font-bold text-ink hover:underline inline-flex items-center gap-1 cursor-pointer"
             >
               <span>Explore Detailed Spending Analysis</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -466,16 +466,16 @@ export default function OverviewPage() {
       </div>
 
       {/* Component D: Recommended Next Action */}
-      <section className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <section className="bg-charcoal text-white rounded-2xl p-6 sm:p-8 border border-slate-700/60 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-2 max-w-2xl">
-          <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-blue-200 uppercase tracking-wider">
-            <Compass className="w-3.5 h-3.5 text-blue-300" />
+          <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
+            <Compass className="w-3.5 h-3.5 text-slate-300" />
             <span>Recommended Next Action</span>
           </div>
-          <h3 className="text-lg sm:text-xl font-serif font-black leading-snug">
+          <h3 className="text-lg sm:text-xl font-serif font-black leading-snug text-white">
             {healthScore.actionableSuggestion}
           </h3>
-          <p className="text-xs text-blue-100 leading-relaxed font-sans">
+          <p className="text-xs text-slate-300 leading-relaxed font-sans">
             Ascend aligns your starter ₹500 credit line with your confirmed primary cash flow cycle, protecting your ₹300 safety buffer against unplanned expenses.
           </p>
         </div>
@@ -483,7 +483,7 @@ export default function OverviewPage() {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
           <NextLink
             href="/assess"
-            className="px-6 py-3 rounded-xl bg-white text-blue-900 hover:bg-blue-50 font-mono text-xs font-bold shadow transition-colors flex items-center justify-center gap-2 cursor-pointer"
+            className="px-6 py-3 rounded-full bg-pin-red hover:bg-pin-pressed text-white font-mono text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
             <ShieldCheck className="w-4 h-4" />
             <span>Evaluate Starter Credit</span>
@@ -492,7 +492,7 @@ export default function OverviewPage() {
 
           <NextLink
             href="/simulator"
-            className="px-5 py-3 rounded-xl bg-blue-800/80 hover:bg-blue-800 border border-blue-400/30 text-white font-mono text-xs font-medium transition-colors flex items-center justify-center cursor-pointer"
+            className="px-5 py-3 rounded-full bg-slate-700/80 hover:bg-slate-700 border border-slate-600 text-white font-mono text-xs font-bold transition-colors flex items-center justify-center cursor-pointer"
           >
             <span>Affordability Simulator</span>
           </NextLink>

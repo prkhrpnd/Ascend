@@ -69,7 +69,7 @@ export default function LineDashboardPage() {
           {transactions.length > 0 ? (
             <NextLink
               href="/offer"
-              className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-bold shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+              className="px-6 py-2.5 rounded-full bg-pin-red text-white font-bold text-xs hover:bg-pin-pressed transition-colors flex items-center gap-2 cursor-pointer"
             >
               <span>Review Starter Credit Offer</span>
               <ArrowRight className="w-4 h-4" />
@@ -78,7 +78,7 @@ export default function LineDashboardPage() {
             <>
               <NextLink
                 href="/link"
-                className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-bold shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+                className="px-6 py-2.5 rounded-full bg-pin-red text-white font-bold text-xs hover:bg-pin-pressed transition-colors flex items-center gap-2 cursor-pointer"
               >
                 <span>Link Bank Account</span>
                 <ArrowRight className="w-4 h-4" />
@@ -86,7 +86,7 @@ export default function LineDashboardPage() {
 
               <NextLink
                 href="/link"
-                className="px-6 py-3 rounded-lg border border-rule bg-paper-2 hover:bg-rule/30 text-ink font-semibold transition-colors flex items-center gap-2"
+                className="px-6 py-2.5 rounded-full bg-[#e5e5e0] hover:bg-[#dadad3] text-[#111110] font-medium text-xs border-transparent transition-colors flex items-center gap-2 cursor-pointer"
               >
                 <FileText className="w-4 h-4 text-ink-soft" />
                 <span>Upload Statement CSV</span>
@@ -210,7 +210,7 @@ export default function LineDashboardPage() {
 
         <NextLink
           href="/score"
-          className="px-4 py-2 rounded-lg bg-paper-2 border border-rule text-ink font-mono text-xs font-bold hover:bg-rule/30 transition-colors flex items-center gap-1.5 self-start sm:self-auto"
+          className="px-4 py-2 rounded-full bg-[#e5e5e0] hover:bg-[#dadad3] text-[#111110] font-mono text-xs font-bold transition-colors flex items-center gap-1.5 self-start sm:self-auto"
         >
           <span>View Credit Progress</span>
           <ArrowRight className="w-4 h-4" />
@@ -218,30 +218,30 @@ export default function LineDashboardPage() {
       </div>
 
       {/* Disbursal Flow Strip */}
-      <div className="p-3.5 rounded-lg bg-paper-2 border border-rule text-xs font-mono">
+      <div className="p-3.5 rounded-2xl bg-white border border-rule text-xs font-mono">
         <span className="text-[10px] font-bold text-ink-soft uppercase block mb-1">
           Regulated Disbursal Flow (Direct to Account)
         </span>
         <div className="flex items-center gap-2 text-ink flex-wrap text-[11px]">
-          <span className="px-2 py-0.5 rounded bg-paper border border-rule font-bold">LendPartner Finance</span>
+          <span className="px-2 py-0.5 rounded-full bg-slate-100 border border-rule font-bold">LendPartner Finance</span>
           <span>→ Direct Transfer →</span>
-          <span className="px-2 py-0.5 rounded bg-paper border border-rule font-bold">{studentName}'s Bank Account</span>
+          <span className="px-2 py-0.5 rounded-full bg-slate-100 border border-rule font-bold">{studentName}'s Bank Account</span>
           <span>→ UPI QR →</span>
-          <span className="px-2 py-0.5 rounded bg-paper border border-rule font-bold">Campus Spend</span>
+          <span className="px-2 py-0.5 rounded-full bg-slate-100 border border-rule font-bold">Campus Spend</span>
         </div>
       </div>
 
       {/* Main Metrics Strip */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
-        <div className="p-4 rounded-xl bg-paper-2 border border-rule space-y-1">
+        <div className="p-4 rounded-2xl bg-white border border-rule space-y-1">
           <span className="text-ink-soft text-[10px] block">Outstanding Balance</span>
-          <span className="font-serif font-black text-2xl text-red-700 block">
+          <span className="font-serif font-black text-2xl text-vermilion block">
             {formatPaise(outstanding)}
           </span>
           <span className="text-[10px] text-ink-soft block font-sans">Due on day {dueDay}</span>
         </div>
 
-        <div className="p-4 rounded-xl bg-paper-2 border border-rule space-y-1">
+        <div className="p-4 rounded-2xl bg-white border border-rule space-y-1">
           <span className="text-ink-soft text-[10px] block">Available to Draw</span>
           <span className="font-serif font-black text-2xl text-ledger-green block">
             {formatPaise(available)}
@@ -249,11 +249,11 @@ export default function LineDashboardPage() {
           <span className="text-[10px] text-ink-soft block font-sans">Self-set cap: {formatPaise(selfCap)}</span>
         </div>
 
-        <div className="p-4 rounded-xl bg-paper-2 border border-rule space-y-1">
+        <div className="p-4 rounded-2xl bg-white border border-rule space-y-1">
           <span className="text-ink-soft text-[10px] block">Utilisation Rate</span>
           <span
             className={`font-serif font-black text-2xl block ${
-              utilPercent >= 60 ? "text-red-700" : "text-ink"
+              utilPercent >= 60 ? "text-vermilion" : "text-ink"
             }`}
           >
             {utilPercent}%
@@ -263,7 +263,7 @@ export default function LineDashboardPage() {
           </span>
         </div>
 
-        <div className="p-4 rounded-xl bg-paper-2 border border-rule space-y-1">
+        <div className="p-4 rounded-2xl bg-white border border-rule space-y-1">
           <span className="text-ink-soft text-[10px] block">AutoPay Mandate</span>
           <span className="font-serif font-bold text-base text-ledger-green block mt-1">
             ACTIVE (SIMULATED)
@@ -274,8 +274,8 @@ export default function LineDashboardPage() {
 
       {/* Utilisation Alert Banner */}
       {utilPercent >= 60 && (
-        <div className="p-3.5 rounded-lg bg-red-50 border border-red-200 text-xs font-mono text-ink flex items-start gap-2">
-          <AlertTriangle className="w-4 h-4 text-red-700 shrink-0 mt-0.5" />
+        <div className="p-3.5 rounded-2xl bg-red-50 border border-red-200 text-xs font-mono text-ink flex items-start gap-2">
+          <AlertTriangle className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
           <div>
             <strong className="text-red-800">Utilisation Alert (60%+):</strong> You have drawn {utilPercent}% of
             your starter cap. Keeping utilisation below 50% builds a stronger bureau vintage file.
@@ -284,7 +284,7 @@ export default function LineDashboardPage() {
       )}
 
       {/* Draw Action Strip */}
-      <section className="p-5 rounded-xl bg-paper-2 border border-rule space-y-4">
+      <section className="p-5 rounded-2xl bg-white border border-rule space-y-4">
         <div>
           <h2 className="font-serif font-bold text-base text-ink">Draw to Your UPI Account</h2>
           <p className="text-xs text-ink-soft mt-0.5">
@@ -303,14 +303,14 @@ export default function LineDashboardPage() {
               value={drawAmount}
               onChange={(e) => setDrawAmount(Number(e.target.value))}
               disabled={available <= 0}
-              className="w-full pl-7 pr-3 py-2 rounded bg-paper border border-rule text-ink font-bold focus:outline-none focus:ring-1 focus:ring-ink"
+              className="w-full pl-7 pr-3 py-2 rounded-xl bg-slate-100 border border-rule text-ink font-bold focus:outline-none focus:ring-1 focus:ring-ink"
             />
           </div>
 
           <button
             type="submit"
             disabled={available <= 0 || drawAmount * 100 > available}
-            className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-ledger-green text-paper font-bold hover:bg-[#23472c] disabled:opacity-40 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-pin-red text-white font-bold hover:bg-pin-pressed disabled:opacity-40 transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
             <Send className="w-3.5 h-3.5" />
             <span>Draw ₹{drawAmount}</span>
@@ -318,7 +318,7 @@ export default function LineDashboardPage() {
         </form>
 
         {coolingOffWarning && (
-          <div className="p-3 rounded-lg bg-marigold/10 border border-marigold text-xs font-mono text-ink space-y-2">
+          <div className="p-3.5 rounded-2xl bg-marigold/10 border border-marigold text-xs font-mono text-ink space-y-2">
             <div className="flex items-center gap-1.5 font-bold text-ink">
               <PauseCircle className="w-4 h-4 text-marigold" />
               <span>{coolingOffWarning}</span>
@@ -337,7 +337,7 @@ export default function LineDashboardPage() {
       </section>
 
       {/* Time-Travel Control & Slip Scenario Scrubber */}
-      <section className="p-6 rounded-xl bg-paper border-2 border-rule space-y-5">
+      <section className="p-6 rounded-2xl bg-white border border-rule space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-rule pb-3">
           <div>
             <span className="font-mono text-xs font-bold text-ledger-green uppercase tracking-wider block">
@@ -346,7 +346,7 @@ export default function LineDashboardPage() {
             <h2 className="font-serif font-black text-xl text-ink">Advance One Cycle (30 Days)</h2>
           </div>
 
-          <label className="flex items-center gap-2.5 cursor-pointer bg-paper-2 p-2 rounded-lg border border-rule select-none">
+          <label className="flex items-center gap-2.5 cursor-pointer bg-slate-100 p-2.5 rounded-2xl border border-rule select-none">
             <input
               type="checkbox"
               checked={slipScenarioOn}
@@ -366,7 +366,7 @@ export default function LineDashboardPage() {
               Turns the ledger page by 30 days. Triggers AutoPay collection, bureau reporting, and history updates.
             </p>
             {slipScenarioOn ? (
-              <span className="text-red-700 font-bold block">
+              <span className="text-vermilion font-bold block">
                 Scenario Mode: Allowance is delayed by 7 days.
               </span>
             ) : (
@@ -378,7 +378,7 @@ export default function LineDashboardPage() {
 
           <button
             onClick={handleAdvanceCycle}
-            className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-bold shadow hover:bg-[#23472c] transition-transform active:scale-95 flex items-center gap-2 shrink-0 cursor-pointer"
+            className="px-6 py-2.5 rounded-full bg-pin-red text-white font-bold hover:bg-pin-pressed transition-transform active:scale-95 flex items-center gap-2 shrink-0 cursor-pointer"
           >
             <Clock className="w-4 h-4" />
             <span>Turn Ledger Page (Advance Cycle)</span>
@@ -388,7 +388,7 @@ export default function LineDashboardPage() {
 
       {/* Moment Card */}
       {activeMomentCard && (
-        <div className="p-4 rounded-xl bg-paper-2 border-2 border-ledger-green/40 space-y-2 animate-in fade-in duration-300">
+        <div className="p-4 rounded-2xl bg-white border border-ledger-green/40 space-y-2 animate-in fade-in duration-300">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-marigold" />
@@ -411,10 +411,10 @@ export default function LineDashboardPage() {
       {/* Slip Scenario Ladder Modal */}
       {slipModalStep && (
         <div className="fixed inset-0 z-50 bg-ink/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="max-w-md w-full bg-paper rounded-xl border-2 border-ink shadow-2xl p-6 space-y-5 animate-in zoom-in-95 duration-200">
+          <div className="max-w-md w-full bg-white rounded-[32px] border border-rule shadow-2xl p-6 space-y-5 animate-in zoom-in-95 duration-200">
             {slipModalStep === "EARLY_WARNING" && (
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-red-700">
+                <div className="flex items-center gap-2 text-vermilion">
                   <AlertTriangle className="w-5 h-5" />
                   <h3 className="font-serif font-bold text-lg text-ink">Early Warning (3 Days Prior)</h3>
                 </div>
@@ -422,7 +422,7 @@ export default function LineDashboardPage() {
                   Our cash flow forecast shows your monthly deposit is arriving 7 days late. AutoPay for ₹
                   {outstanding / 100} is due on day {dueDay}.
                 </p>
-                <div className="p-3 rounded bg-paper-2 border border-rule text-xs font-mono space-y-1">
+                <div className="p-3 rounded-xl bg-slate-100 border border-rule text-xs font-mono space-y-1">
                   <span className="font-bold text-ink block">Zero Harassment Guarantee:</span>
                   <span className="text-[11px] text-ink-soft">
                     Ascend never calls parents, contacts, or employers. You have structured assistance choices below.
@@ -431,7 +431,7 @@ export default function LineDashboardPage() {
                 <div className="flex justify-end gap-2 pt-2 font-mono text-xs">
                   <button
                     onClick={() => setSlipModalStep("CHOICE")}
-                    className="px-4 py-2 rounded-lg bg-ink text-paper font-bold hover:bg-ink-soft cursor-pointer"
+                    className="px-4 py-2 rounded-full bg-ink text-white font-bold hover:bg-slate-800 cursor-pointer"
                   >
                     View Assistance Options
                   </button>
@@ -451,7 +451,7 @@ export default function LineDashboardPage() {
                 <div className="space-y-2">
                   <button
                     onClick={() => handleResolveSlip("SHIFT_DUE_DATE")}
-                    className="w-full p-3 rounded-lg border border-rule bg-paper-2 hover:bg-rule/40 text-left transition-colors cursor-pointer"
+                    className="w-full p-3 rounded-xl border border-rule bg-white hover:bg-slate-100 text-left transition-colors cursor-pointer"
                   >
                     <span className="font-bold text-ink block">1. One-Time Due Date Shift (7 Days)</span>
                     <span className="text-[11px] text-ink-soft font-sans">
@@ -461,7 +461,7 @@ export default function LineDashboardPage() {
 
                   <button
                     onClick={() => handleResolveSlip("SPLIT_INSTALLMENTS")}
-                    className="w-full p-3 rounded-lg border border-rule bg-paper-2 hover:bg-rule/40 text-left transition-colors cursor-pointer"
+                    className="w-full p-3 rounded-xl border border-rule bg-white hover:bg-slate-100 text-left transition-colors cursor-pointer"
                   >
                     <span className="font-bold text-ink block">2. Split into Two Instalments</span>
                     <span className="text-[11px] text-ink-soft font-sans">
@@ -471,7 +471,7 @@ export default function LineDashboardPage() {
 
                   <button
                     onClick={() => handleResolveSlip("REPAY_ON_TIME")}
-                    className="w-full p-3 rounded-lg border border-ledger-green/40 bg-ledger-green/5 hover:bg-ledger-green/10 text-left transition-colors cursor-pointer"
+                    className="w-full p-3 rounded-xl border border-ledger-green/40 bg-ledger-green/5 hover:bg-ledger-green/10 text-left transition-colors cursor-pointer"
                   >
                     <span className="font-bold text-ledger-green block">3. Clear in Full Right Now</span>
                     <span className="text-[11px] text-ink-soft font-sans">
@@ -481,9 +481,9 @@ export default function LineDashboardPage() {
 
                   <button
                     onClick={() => handleResolveSlip("MISS_PAYMENT")}
-                    className="w-full p-3 rounded-lg border border-red-200 bg-red-50/50 hover:bg-red-100/50 text-left transition-colors cursor-pointer"
+                    className="w-full p-3 rounded-xl border border-red-200 bg-red-50/50 hover:bg-red-100/50 text-left transition-colors cursor-pointer"
                   >
-                    <span className="font-bold text-red-700 block">4. Miss Payment Anyway (Stress Demo)</span>
+                    <span className="font-bold text-vermilion block">4. Miss Payment Anyway (Stress Demo)</span>
                     <span className="text-[11px] text-ink-soft font-sans">
                       Partner applies flat ₹50 fee, draws paused, bureau impact recorded. Never calls family.
                     </span>
@@ -499,13 +499,13 @@ export default function LineDashboardPage() {
       <section className="space-y-3">
         <h3 className="font-serif font-bold text-lg text-ink">Cycle History Records</h3>
         {creditState.cycleHistory.length === 0 ? (
-          <div className="p-6 rounded-lg bg-paper-2 border border-rule text-center text-xs font-mono text-ink-soft">
+          <div className="p-6 rounded-2xl bg-white border border-rule text-center text-xs font-mono text-ink-soft">
             No completed cycles yet. Draw funds and use the Time Travel Scrubber to advance your first cycle.
           </div>
         ) : (
-          <div className="border border-rule rounded-lg bg-paper overflow-hidden shadow-sm">
+          <div className="border border-rule rounded-2xl bg-white overflow-hidden">
             <table className="w-full text-xs font-mono divide-y divide-rule text-left">
-              <thead className="bg-paper-2 text-[11px] text-ink-soft uppercase tracking-wider">
+              <thead className="bg-[#f6f6f3] text-[11px] text-ink-soft uppercase tracking-wider">
                 <tr>
                   <th className="p-2.5">Cycle #</th>
                   <th className="p-2.5 text-right">Drawn</th>
@@ -516,17 +516,17 @@ export default function LineDashboardPage() {
               </thead>
               <tbody className="divide-y divide-rule/60">
                 {creditState.cycleHistory.map((c) => (
-                  <tr key={c.cycleNumber} className="hover:bg-paper-2/40">
+                  <tr key={c.cycleNumber} className="hover:bg-slate-50">
                     <td className="p-2.5 font-bold text-ink">Cycle #{c.cycleNumber}</td>
                     <td className="p-2.5 text-right">{formatPaise(c.drawnPaise)}</td>
                     <td className="p-2.5 text-right font-bold">{formatPaise(c.repaidPaise)}</td>
                     <td className="p-2.5">
                       {c.onTime ? (
-                        <span className="px-1.5 py-0.5 rounded bg-ledger-green/10 text-ledger-green font-bold text-[10px]">
+                        <span className="px-1.5 py-0.5 rounded-full bg-ledger-green/10 text-ledger-green font-bold text-[10px]">
                           ON TIME
                         </span>
                       ) : (
-                        <span className="px-1.5 py-0.5 rounded bg-red-100 text-red-800 font-bold text-[10px]">
+                        <span className="px-1.5 py-0.5 rounded-full bg-red-100 text-red-800 font-bold text-[10px]">
                           MISSED (+₹50 LATE FEE)
                         </span>
                       )}

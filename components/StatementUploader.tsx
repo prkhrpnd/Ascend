@@ -214,10 +214,10 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
           {/* Download Template Button */}
           <button
             onClick={handleDownloadTemplate}
-            className="px-3 py-1.5 rounded-lg border border-rule hover:bg-slate-50 text-xs text-ink font-medium flex items-center gap-1.5 transition-colors cursor-pointer"
+            className="px-3.5 py-1.5 rounded-full border border-slate-300 bg-slate-200/80 hover:bg-slate-300/80 text-xs text-ink font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
             title="Download formatted sample CSV file"
           >
-            <Download className="w-3.5 h-3.5 text-ink-soft" />
+            <Download className="w-3.5 h-3.5 text-ink" />
             <span>CSV Template</span>
           </button>
 
@@ -225,9 +225,9 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
           <button
             onClick={handleLoadDemoPriya}
             disabled={isLoading}
-            className="px-3.5 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100 font-mono text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50"
+            className="px-4 py-1.5 rounded-full bg-slate-200/80 hover:bg-slate-300/80 border border-slate-300 text-ink text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50"
           >
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            <Sparkles className="w-3.5 h-3.5 text-ink" />
             <span>Load Priya Demo Statement</span>
           </button>
         </div>
@@ -240,10 +240,10 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
-          className={`border-2 border-dashed rounded-xl p-8 sm:p-12 text-center transition-all cursor-pointer ${
+          className={`border-2 border-dashed rounded-2xl p-8 sm:p-12 text-center transition-all cursor-pointer ${
             isDragging
-              ? "border-blue-500 bg-blue-50/50 scale-[1.01]"
-              : "border-slate-300 hover:border-blue-400 bg-slate-50/50 hover:bg-slate-50"
+              ? "border-ink bg-slate-100 scale-[1.01]"
+              : "border-slate-300 hover:border-ink bg-slate-100/70 hover:bg-slate-100"
           }`}
         >
           <input
@@ -255,11 +255,11 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
           />
 
           <div className="max-w-md mx-auto space-y-3">
-            <div className="w-12 h-12 mx-auto rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-inner">
+            <div className="w-12 h-12 mx-auto rounded-full bg-slate-200 text-ink flex items-center justify-center">
               {isLoading ? (
-                <RefreshCw className="w-6 h-6 animate-spin text-blue-600" />
+                <RefreshCw className="w-6 h-6 animate-spin text-ink" />
               ) : (
-                <UploadCloud className="w-6 h-6 text-blue-600" />
+                <UploadCloud className="w-6 h-6 text-ink" />
               )}
             </div>
 
@@ -283,22 +283,22 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
 
       {/* Interactive Statement Preview Card Before Final Confirmation */}
       {pendingPreview && (
-        <div className="p-5 sm:p-6 rounded-xl bg-blue-50/60 border border-blue-300 space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-blue-200 pb-3">
+        <div className="p-5 sm:p-6 rounded-2xl bg-slate-100 border border-slate-300 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-3">
             <div className="flex items-center gap-2">
-              <Eye className="w-4 h-4 text-blue-700" />
+              <Eye className="w-4 h-4 text-ink" />
               <h3 className="font-serif font-bold text-base text-ink">
                 Statement Preview & Import Confirmation
               </h3>
             </div>
             <div className="flex items-center gap-2 font-mono text-xs">
-              <span className="px-2 py-0.5 rounded bg-white border border-blue-200 text-blue-800 font-bold">
+              <span className="px-2.5 py-0.5 rounded-full bg-white border border-slate-300 text-ink font-bold">
                 {pendingPreview.file.name} ({Math.round(pendingPreview.file.size / 1024)} KB)
               </span>
               <button
                 type="button"
                 onClick={handleCancelPreview}
-                className="p-1 rounded hover:bg-blue-100 text-ink-soft cursor-pointer"
+                className="p-1 rounded-full hover:bg-slate-200 text-ink-soft cursor-pointer"
                 title="Cancel preview"
               >
                 <X className="w-4 h-4" />
@@ -308,27 +308,27 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
 
           {/* Quick Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
-            <div className="bg-white p-3 rounded-lg border border-blue-100 space-y-0.5">
+            <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-0.5">
               <span className="text-[10px] text-ink-soft uppercase block">Valid Records</span>
               <span className="font-bold text-ink text-sm">
                 {pendingPreview.result.transactions.length} rows
               </span>
             </div>
-            <div className="bg-white p-3 rounded-lg border border-blue-100 space-y-0.5">
+            <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-0.5">
               <span className="text-[10px] text-ink-soft uppercase block">Date Range</span>
               <span className="font-bold text-ink text-xs truncate block">
                 {pendingPreview.result.stats?.startDate} to {pendingPreview.result.stats?.endDate}
               </span>
             </div>
-            <div className="bg-white p-3 rounded-lg border border-blue-100 space-y-0.5">
+            <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-0.5">
               <span className="text-[10px] text-ink-soft uppercase block">Total Credits</span>
               <span className="font-bold text-emerald-700 text-sm">
                 {previewMetrics ? formatPaise(previewMetrics.totalCr) : "₹0"}
               </span>
             </div>
-            <div className="bg-white p-3 rounded-lg border border-blue-100 space-y-0.5">
+            <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-0.5">
               <span className="text-[10px] text-ink-soft uppercase block">Total Debits</span>
-              <span className="font-bold text-rose-600 text-sm">
+              <span className="font-bold text-vermilion text-sm">
                 {previewMetrics ? formatPaise(previewMetrics.totalDr) : "₹0"}
               </span>
             </div>
@@ -336,21 +336,21 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
 
           {/* Column Mapping Badges */}
           {pendingPreview.result.stats && (
-            <div className="p-3 bg-white rounded-lg border border-blue-100 text-xs font-mono space-y-1">
+            <div className="p-3 bg-white rounded-xl border border-slate-200 text-xs font-mono space-y-1">
               <span className="text-[10px] uppercase font-bold text-ink-soft block">
                 Detected Column Mapping:
               </span>
               <div className="flex flex-wrap gap-2 text-[11px]">
-                <span className="px-2 py-0.5 rounded bg-slate-50 border border-rule text-ink">
+                <span className="px-2 py-0.5 rounded-full bg-slate-100 border border-rule text-ink">
                   Date: <strong>{pendingPreview.result.stats.startDate ? "Detected" : "Mapped"}</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-slate-50 border border-rule text-ink">
+                <span className="px-2 py-0.5 rounded-full bg-slate-100 border border-rule text-ink">
                   Currency: <strong>{pendingPreview.result.stats.currencyDetected || "INR"}</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-slate-50 border border-rule text-ink">
+                <span className="px-2 py-0.5 rounded-full bg-slate-100 border border-rule text-ink">
                   Running Balance: <strong>{pendingPreview.result.stats.hasBalances ? "Verified" : "None"}</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-slate-50 border border-rule text-ink">
+                <span className="px-2 py-0.5 rounded-full bg-slate-100 border border-rule text-ink">
                   Deduplication: <strong>{pendingPreview.result.stats.duplicateRows} duplicates filtered</strong>
                 </span>
               </div>
@@ -358,14 +358,14 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
           )}
 
           {/* First 5 Preview Rows Table */}
-          <div className="bg-white rounded-lg border border-blue-100 overflow-hidden text-xs">
-            <div className="px-3 py-2 bg-slate-50 border-b border-rule font-bold text-ink flex items-center justify-between text-[11px] font-mono">
+          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden text-xs">
+            <div className="px-3 py-2 bg-slate-100 border-b border-rule font-bold text-ink flex items-center justify-between text-[11px] font-mono">
               <span>First 5 Sample Transactions Preview</span>
               <span className="text-ink-soft font-normal">Review before final ingestion</span>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left font-mono text-[11px]">
-                <thead className="bg-slate-50/50 border-b border-rule text-ink-soft uppercase text-[10px]">
+                <thead className="bg-slate-50 border-b border-rule text-ink-soft uppercase text-[10px]">
                   <tr>
                     <th className="px-3 py-2">Date</th>
                     <th className="px-3 py-2">Narration</th>
@@ -376,15 +376,15 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   {pendingPreview.result.transactions.slice(0, 5).map((tx, idx) => (
-                    <tr key={idx} className="hover:bg-slate-50/60">
+                    <tr key={idx} className="hover:bg-slate-100/70">
                       <td className="px-3 py-1.5 whitespace-nowrap text-ink-soft">{tx.date}</td>
                       <td className="px-3 py-1.5 max-w-xs truncate text-ink">{tx.narration}</td>
                       <td className="px-3 py-1.5">
                         <span
-                          className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${
+                          className={`px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
                             tx.type === "CR"
                               ? "bg-emerald-50 text-emerald-700"
-                              : "bg-rose-50 text-rose-700"
+                              : "bg-rose-50 text-vermilion"
                           }`}
                         >
                           {tx.type}
@@ -392,7 +392,7 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
                       </td>
                       <td
                         className={`px-3 py-1.5 text-right font-bold whitespace-nowrap ${
-                          tx.type === "CR" ? "text-emerald-700" : "text-rose-700"
+                          tx.type === "CR" ? "text-emerald-700" : "text-vermilion"
                         }`}
                       >
                         {formatPaise(tx.amount_paise)}
@@ -412,7 +412,7 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
             <button
               type="button"
               onClick={handleCancelPreview}
-              className="px-4 py-2.5 rounded-xl border border-rule bg-white hover:bg-slate-50 text-xs font-mono text-ink font-semibold transition-colors cursor-pointer"
+              className="px-4 py-2.5 rounded-full border border-slate-300 bg-slate-200/80 hover:bg-slate-300/80 text-xs text-ink font-bold transition-colors cursor-pointer"
             >
               Cancel / Choose Different File
             </button>
@@ -421,7 +421,7 @@ export function StatementUploader({ onSuccess }: StatementUploaderProps) {
               type="button"
               onClick={handleConfirmImport}
               disabled={isLoading}
-              className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs font-bold shadow transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="px-6 py-2.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isLoading ? (
                 <>

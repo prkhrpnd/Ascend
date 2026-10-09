@@ -11,7 +11,7 @@ export function SimulationBadge({ label = "SIMULATED", size = "sm", className = 
 
   return (
     <span
-      className={`inline-flex items-center gap-1 font-mono uppercase tracking-wider font-semibold rounded border border-vermilion/40 bg-vermilion/10 text-vermilion ${sizeClasses} ${className}`}
+      className={`inline-flex items-center gap-1 font-mono uppercase tracking-wider font-semibold rounded-full border border-vermilion/30 bg-vermilion/10 text-vermilion ${sizeClasses} ${className}`}
       title="This component is simulated for demonstration and regulatory compliance. Ascend does not hold customer funds or decide banking licenses."
     >
       <span className="w-1.5 h-1.5 rounded-full bg-vermilion animate-pulse" />

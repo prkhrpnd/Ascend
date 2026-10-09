@@ -41,7 +41,7 @@ export default function OfferPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 font-mono text-xs">
           <NextLink
             href="/link"
-            className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-bold shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+            className="px-6 py-2.5 rounded-full bg-pin-red text-white font-bold text-xs hover:bg-pin-pressed transition-colors flex items-center gap-2 cursor-pointer"
           >
             <span>Link Bank Account</span>
             <ArrowRight className="w-4 h-4" />
@@ -49,7 +49,7 @@ export default function OfferPage() {
 
           <NextLink
             href="/link"
-            className="px-6 py-3 rounded-lg border border-rule bg-paper-2 hover:bg-rule/30 text-ink font-semibold transition-colors flex items-center gap-2"
+            className="px-6 py-2.5 rounded-full bg-[#e5e5e0] hover:bg-[#dadad3] text-[#111110] font-medium text-xs transition-colors flex items-center gap-2 cursor-pointer"
           >
             <FileText className="w-4 h-4 text-ink-soft" />
             <span>Upload Statement CSV</span>
@@ -91,12 +91,12 @@ export default function OfferPage() {
       </div>
 
       {/* Regulated Partner Banner */}
-      <div className="p-3.5 rounded-lg bg-paper-2 border border-rule text-xs font-mono text-ink-soft">
+      <div className="p-3.5 rounded-2xl bg-white border border-rule text-xs font-mono text-ink-soft">
         Loan is issued and held by LendPartner Finance (SIMULATED). Ascend is a technology platform and not a lender.
       </div>
 
       {/* Self-Set Cap Control */}
-      <div className="p-5 rounded-xl bg-paper-2 border border-rule space-y-4">
+      <div className="p-5 rounded-2xl bg-white border border-rule space-y-4">
         <div className="flex items-center justify-between">
           <div>
             <span className="font-mono text-xs font-bold text-ink uppercase tracking-wider block">
@@ -128,8 +128,8 @@ export default function OfferPage() {
       </div>
 
       {/* Cost Card Receipt */}
-      <div className="relative border-2 border-rule rounded-xl bg-paper overflow-hidden shadow-md">
-        <div className="h-4 bg-paper-2 border-b border-rule receipt-perforation-top" />
+      <div className="relative border border-rule rounded-2xl bg-white overflow-hidden">
+        <div className="h-4 bg-slate-100 border-b border-rule receipt-perforation-top" />
 
         <div className="p-6 space-y-6 font-mono text-xs">
           <div className="text-center space-y-1 border-b border-rule/60 pb-4">
@@ -171,8 +171,8 @@ export default function OfferPage() {
             </div>
 
             <div className="flex justify-between items-center py-1 border-b border-rule/30">
-              <span className="text-red-700 font-bold">Ascend Revenue from Late Fees:</span>
-              <span className="font-bold text-red-700">Hard ₹0 Zero</span>
+              <span className="text-vermilion font-bold">Ascend Revenue from Late Fees:</span>
+              <span className="font-bold text-vermilion">Hard ₹0 Zero</span>
             </div>
 
             <div className="flex justify-between items-center py-1 border-b border-rule/30">
@@ -190,7 +190,7 @@ export default function OfferPage() {
           </div>
 
           {/* Bureau Notice */}
-          <div className="p-3 rounded bg-paper-2 border border-rule text-[11px] font-sans text-ink space-y-1">
+          <div className="p-3 rounded-xl bg-slate-100 border border-rule text-[11px] font-sans text-ink space-y-1">
             <span className="font-mono text-[10px] font-bold text-ink-soft uppercase block">Bureau Impact</span>
             <p>{costCard.bureauNotice}</p>
           </div>
@@ -215,11 +215,11 @@ export default function OfferPage() {
           </div>
         </div>
 
-        <div className="h-4 bg-paper-2 border-t border-rule receipt-perforation-bottom" />
+        <div className="h-4 bg-slate-100 border-t border-rule receipt-perforation-bottom" />
       </div>
 
       {/* Mandatory Bureau Acknowledgement Checkbox */}
-      <div className="p-4 rounded-xl bg-paper-2 border border-rule space-y-3 text-xs">
+      <div className="p-4 rounded-2xl bg-white border border-rule space-y-3 text-xs">
         <label className="flex items-start gap-2.5 cursor-pointer text-ink select-none">
           <input
             type="checkbox"
@@ -248,7 +248,7 @@ export default function OfferPage() {
         <button
           onClick={handleAcceptOffer}
           disabled={!bureauAck || !receiptSigned}
-          className="px-8 py-3.5 rounded-lg bg-ledger-green text-paper font-mono font-bold text-xs shadow-md hover:bg-[#23472c] disabled:opacity-40 transition-colors flex items-center gap-2 cursor-pointer"
+          className="px-8 py-3.5 rounded-full bg-pin-red text-white font-bold text-xs hover:bg-pin-pressed disabled:opacity-40 transition-colors flex items-center gap-2 cursor-pointer"
         >
           <span>Accept Starter Line ({formatPaise(selfSetCapPaise)})</span>
           <ArrowRight className="w-4 h-4" />

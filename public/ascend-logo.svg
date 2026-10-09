@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="ascend-grad" x1="120" y1="48" x2="430" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00C2FF"/>
+      <stop offset="30%" stop-color="#00A3FF"/>
+      <stop offset="65%" stop-color="#0077FF"/>
+      <stop offset="100%" stop-color="#0052FF"/>
+    </linearGradient>
+  </defs>
+  <path d="
+    M 48.00 464.00
+    L 152.00 464.00
+    L 242.80 207.33
+    A 14.00 14.00 0 0 1 269.20 207.33
+    L 360.00 464.00
+    L 464.00 464.00
+    L 288.91 98.60
+    A 36.00 36.00 0 0 0 223.09 98.60
+    Z
+  " fill="url(#ascend-grad)"/>
+</svg>

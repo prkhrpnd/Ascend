@@ -57,8 +57,8 @@ export default function ExpenseCategoriesPage() {
       {/* Header */}
       <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-mono">
-            <Layers className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-ink text-xs font-mono">
+            <Layers className="w-3.5 h-3.5 text-ink" />
             <span>18 Personal Finance Categories</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-serif font-black text-ink tracking-tight">
@@ -72,7 +72,7 @@ export default function ExpenseCategoriesPage() {
 
         <NextLink
           href="/spending"
-          className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-mono font-bold shadow-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
+          className="px-5 py-2.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
         >
           <span>View Spending Analysis</span>
           <ArrowRight className="w-3.5 h-3.5" />
@@ -80,12 +80,12 @@ export default function ExpenseCategoriesPage() {
       </div>
 
       {/* Explanatory Policy Card: Consumer Spending vs Transfers */}
-      <div className="bg-blue-50/70 rounded-2xl border border-blue-200 p-5 space-y-2 text-xs">
-        <div className="flex items-center gap-2 text-blue-900 font-bold">
-          <Info className="w-4 h-4 text-blue-700" />
+      <div className="bg-slate-100 rounded-2xl border border-rule p-5 space-y-2 text-xs">
+        <div className="flex items-center gap-2 text-ink font-bold">
+          <Info className="w-4 h-4 text-ink" />
           <span>Why Investments and Self Transfers Are Excluded from Consumer Spending</span>
         </div>
-        <p className="text-blue-950/80 leading-relaxed text-[11px]">
+        <p className="text-ink-soft leading-relaxed text-[11px]">
           Transfers between own accounts (e.g. sweep-in/out or moving cash to another savings account) and investments
           (e.g. Zerodha, Groww SIPs, or PPF deposits) represent asset allocation rather than true consumption. Ascend
           tracks them in your balance sheet but excludes them from your cost of living calculation to prevent false
@@ -99,10 +99,10 @@ export default function ExpenseCategoriesPage() {
           <button
             key={g.id}
             onClick={() => setSelectedGroup(g.id)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer ${
               selectedGroup === g.id
-                ? "bg-blue-600 text-white font-bold shadow-sm"
-                : "bg-white border border-rule text-ink-soft hover:text-ink hover:bg-slate-50"
+                ? "bg-ink text-white font-bold"
+                : "bg-white border border-rule text-ink-soft hover:text-ink hover:bg-slate-100"
             }`}
           >
             {g.label}

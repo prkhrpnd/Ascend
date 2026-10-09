@@ -29,10 +29,10 @@ export default function CashFlowPage() {
   return (
     <div className="space-y-8 max-w-7xl mx-auto py-2">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-white rounded-2xl border border-rule p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-mono">
-            <Activity className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-ink text-xs font-mono">
+            <Activity className="w-3.5 h-3.5 text-ink" />
             <span>Cash Flow Rhythm & Liquidity Analysis</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-serif font-black text-ink tracking-tight">
@@ -46,7 +46,7 @@ export default function CashFlowPage() {
 
         <NextLink
           href="/assess"
-          className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-mono font-bold shadow-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
+          className="px-5 py-2.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
         >
           <ShieldCheck className="w-4 h-4" />
           <span>View Credit Limit Offer</span>
@@ -57,7 +57,7 @@ export default function CashFlowPage() {
       {/* Summary KPI Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Median Monthly Inflow */}
-        <div className="bg-white p-5 rounded-2xl border border-rule shadow-sm space-y-1.5">
+        <div className="bg-white p-5 rounded-2xl border border-rule space-y-1.5">
           <span className="text-[11px] text-ink-soft block font-medium">Median Qualifying Inflow</span>
           <p className="font-serif font-black text-2xl text-ink">
             {income ? formatPaise(income.medianQualifyingIncomePaise) : "₹0"}

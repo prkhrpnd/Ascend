@@ -9,6 +9,7 @@ import { IncomeExpenseChart } from "@/components/charts/IncomeExpenseChart";
 import { SpendingTrendChart } from "@/components/charts/SpendingTrendChart";
 import { CategoryDonutChart } from "@/components/charts/CategoryDonutChart";
 import { TransactionExplorer } from "@/components/TransactionExplorer";
+import { PremiumLock } from "@/components/premium/PremiumLock";
 import {
   TrendingUp,
   TrendingDown,
@@ -52,7 +53,7 @@ export default function SpendingAnalysisPage() {
 
         <NextLink
           href="/assess"
-          className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-mono font-bold shadow-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
+          className="px-5 py-2.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
         >
           <ShieldCheck className="w-4 h-4" />
           <span>Apply to Credit Limit</span>
@@ -63,7 +64,7 @@ export default function SpendingAnalysisPage() {
       {/* Dynamic Spending Metrics Grid (Step 5) */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
         {/* Total Inflow */}
-        <div className="bg-white p-4 rounded-xl border border-rule shadow-sm space-y-1">
+        <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule space-y-1">
           <span className="text-[11px] text-ink-soft block font-medium">Total Inflows</span>
           <p className="font-mono font-bold text-lg text-emerald-700">
             {analytics ? formatPaise(analytics.totalInflowPaise) : "₹0"}
@@ -72,20 +73,20 @@ export default function SpendingAnalysisPage() {
         </div>
 
         {/* Total Outflow */}
-        <div className="bg-white p-4 rounded-xl border border-rule shadow-sm space-y-1">
+        <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule space-y-1">
           <span className="text-[11px] text-ink-soft block font-medium">Total Outflows</span>
-          <p className="font-mono font-bold text-lg text-rose-600">
+          <p className="font-mono font-bold text-lg text-vermilion">
             {analytics ? formatPaise(analytics.totalOutflowPaise) : "₹0"}
           </p>
           <p className="text-[10px] text-ink-soft">All debits analyzed</p>
         </div>
 
         {/* Net Cash Flow */}
-        <div className="bg-white p-4 rounded-xl border border-rule shadow-sm space-y-1">
+        <div className="bg-white p-4 sm:p-5 rounded-2xl border border-rule space-y-1">
           <span className="text-[11px] text-ink-soft block font-medium">Net Cash Flow</span>
           <p
             className={`font-mono font-bold text-lg ${
-              analytics && analytics.netCashFlowPaise >= 0 ? "text-emerald-700" : "text-rose-700"
+              analytics && analytics.netCashFlowPaise >= 0 ? "text-emerald-700" : "text-vermilion"
             }`}
           >
             {analytics ? (
@@ -162,71 +163,77 @@ export default function SpendingAnalysisPage() {
       </div>
 
       {/* Bottom Section: Expense Breakdown by Category (Bar Chart) */}
-      <div className="min-w-0 bg-white rounded-2xl border border-rule shadow-sm p-6 space-y-4 overflow-hidden box-border">
-        <div className="flex items-center justify-between border-b border-rule pb-3">
-          <div>
-            <h2 className="text-base font-serif font-bold text-ink">
-              Expense Breakdown by Category
-            </h2>
-            <p className="text-xs text-ink-soft mt-0.5">
-              Sorted by highest spend. Click any bar to filter the transaction list below.
-            </p>
+      <PremiumLock>
+        <div className="min-w-0 bg-white rounded-2xl border border-rule shadow-sm p-6 space-y-4 overflow-hidden box-border">
+          <div className="flex items-center justify-between border-b border-rule pb-3">
+            <div>
+              <h2 className="text-base font-serif font-bold text-ink">
+                Expense Breakdown by Category
+              </h2>
+              <p className="text-xs text-ink-soft mt-0.5">
+                Sorted by highest spend. Click any bar to filter the transaction list below.
+              </p>
+            </div>
+            {activeCategoryFilter && (
+              <button
+                onClick={() => setActiveCategoryFilter(null)}
+                className="text-xs font-semibold text-blue-600 hover:underline cursor-pointer"
+              >
+                Clear Filter
+              </button>
+            )}
           </div>
-          {activeCategoryFilter && (
-            <button
-              onClick={() => setActiveCategoryFilter(null)}
-              className="text-xs font-semibold text-blue-600 hover:underline cursor-pointer"
-            >
-              Clear Filter
-            </button>
+
+          {analytics ? (
+            <CategoryBarChart
+              categories={Object.values(analytics.categoryTotals)}
+              totalOutflowPaise={analytics.totalOutflowPaise}
+              activeFilter={activeCategoryFilter}
+              onSelectCategory={setActiveCategoryFilter}
+            />
+          ) : (
+            <div className="p-8 text-center text-xs text-ink-soft">No expense data available.</div>
           )}
         </div>
-
-        {analytics ? (
-          <CategoryBarChart
-            categories={Object.values(analytics.categoryTotals)}
-            totalOutflowPaise={analytics.totalOutflowPaise}
-            activeFilter={activeCategoryFilter}
-            onSelectCategory={setActiveCategoryFilter}
-          />
-        ) : (
-          <div className="p-8 text-center text-xs text-ink-soft">No expense data available.</div>
-        )}
-      </div>
+      </PremiumLock>
 
       {/* Row 2 Charts: Monthly Comparison & Spending Trends Timeline */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Income vs Expenses Comparison */}
-        <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 space-y-4">
-          <div className="border-b border-rule pb-3">
-            <h2 className="text-base font-serif font-bold text-ink">
-              Income vs Expenses Comparison (Monthly)
-            </h2>
-            <p className="text-xs text-ink-soft mt-0.5">
-              Cash flow comparison across each statement month
-            </p>
-          </div>
+        <PremiumLock description="See your full month-by-month income and expense comparison with Ascend Premium">
+          <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 space-y-4">
+            <div className="border-b border-rule pb-3">
+              <h2 className="text-base font-serif font-bold text-ink">
+                Income vs Expenses Comparison (Monthly)
+              </h2>
+              <p className="text-xs text-ink-soft mt-0.5">
+                Cash flow comparison across each statement month
+              </p>
+            </div>
 
-          {analytics && analytics.monthlyBreakdown.length > 0 ? (
-            <IncomeExpenseChart data={analytics.monthlyBreakdown} />
-          ) : null}
-        </div>
+            {analytics && analytics.monthlyBreakdown.length > 0 ? (
+              <IncomeExpenseChart data={analytics.monthlyBreakdown} />
+            ) : null}
+          </div>
+        </PremiumLock>
 
         {/* Daily Spending Trends Over Time */}
-        <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 space-y-4">
-          <div className="border-b border-rule pb-3">
-            <h2 className="text-base font-serif font-bold text-ink">
-              Spending Trends Over Time (Daily Outflows)
-            </h2>
-            <p className="text-xs text-ink-soft mt-0.5">
-              Timeline of daily outflows with peak expense indicators
-            </p>
-          </div>
+        <PremiumLock description="Unlock your complete daily spending trend analysis with Ascend Premium">
+          <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 space-y-4">
+            <div className="border-b border-rule pb-3">
+              <h2 className="text-base font-serif font-bold text-ink">
+                Spending Trends Over Time (Daily Outflows)
+              </h2>
+              <p className="text-xs text-ink-soft mt-0.5">
+                Timeline of daily outflows with peak expense indicators
+              </p>
+            </div>
 
-          {transactions.length > 0 ? (
-            <SpendingTrendChart transactions={transactions} />
-          ) : null}
-        </div>
+            {transactions.length > 0 ? (
+              <SpendingTrendChart transactions={transactions} />
+            ) : null}
+          </div>
+        </PremiumLock>
       </div>
 
       {/* Transaction Explorer and Filtering (Step 7) */}
@@ -246,12 +253,14 @@ export default function SpendingAnalysisPage() {
           </span>
         </div>
 
-        <TransactionExplorer
-          transactions={transactions}
-          activeCategoryFilter={activeCategoryFilter}
-          onSelectCategoryFilter={setActiveCategoryFilter}
-          onUpdateCategory={updateTransactionCategory}
-        />
+        <PremiumLock description="Explore and re-categorize every transaction with Ascend Premium">
+          <TransactionExplorer
+            transactions={transactions}
+            activeCategoryFilter={activeCategoryFilter}
+            onSelectCategoryFilter={setActiveCategoryFilter}
+            onUpdateCategory={updateTransactionCategory}
+          />
+        </PremiumLock>
       </div>
     </div>
   );

@@ -168,12 +168,12 @@ export function JudgeLens() {
         <aside
           role="complementary"
           aria-label="Judge Lens Panel"
-          className="fixed inset-y-0 left-0 w-80 md:w-96 bg-paper-2 border-r-2 border-rule shadow-2xl z-50 flex flex-col overflow-hidden animate-in slide-in-from-left duration-200"
+          className="fixed inset-y-0 left-0 w-80 md:w-96 bg-white dark:bg-[#1c1c1a] border-r border-rule shadow-2xl z-50 flex flex-col overflow-hidden animate-in slide-in-from-left duration-200"
         >
           {/* Header */}
-          <div className="p-4 border-b border-rule bg-paper flex items-center justify-between">
+          <div className="p-4 border-b border-rule bg-[#f6f6f3] dark:bg-[#262622] flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Scale className="w-5 h-5 text-vermilion" />
+              <Scale className="w-5 h-5 text-pin-red" />
               <div>
                 <h3 className="font-serif font-bold text-sm text-ink">Judge Lens Inspector</h3>
                 <p className="text-[10px] text-ink-soft font-mono">Live rubric compliance audit</p>
@@ -181,7 +181,7 @@ export function JudgeLens() {
             </div>
             <button
               onClick={() => setJudgeLensOpen(false)}
-              className="p-1 rounded hover:bg-rule/30 text-ink-soft"
+              className="p-1 rounded-full hover:bg-rule/40 text-ink-soft"
               aria-label="Close Inspector"
             >
               <X className="w-4 h-4" />
@@ -203,7 +203,7 @@ export function JudgeLens() {
               </div>
               <ul className="space-y-2">
                 {currentCtx.constraints.map((c) => (
-                  <li key={c.id} className="p-2 rounded bg-paper border border-rule flex items-start gap-2">
+                  <li key={c.id} className="p-3 rounded-2xl bg-slate-100 border border-rule flex items-start gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-ledger-green shrink-0 mt-0.5" />
                     <div>
                       <span className="font-mono font-bold text-[10px] text-ink-soft block">Constraint #{c.id}</span>
@@ -222,7 +222,7 @@ export function JudgeLens() {
               </div>
               <div className="space-y-2">
                 {currentCtx.questions.map((q, idx) => (
-                  <div key={idx} className="p-2.5 rounded bg-paper border border-rule">
+                  <div key={idx} className="p-3 rounded-2xl bg-slate-100 border border-rule">
                     <span className="font-mono font-bold text-[10px] text-marigold block">{q.q}</span>
                     <p className="text-ink text-[11px] mt-0.5">{q.text}</p>
                   </div>
@@ -231,13 +231,13 @@ export function JudgeLens() {
             </div>
 
             {/* Defense Note */}
-            <div className="p-3 rounded border border-vermilion/30 bg-vermilion/5">
-              <span className="font-mono text-[10px] font-bold text-vermilion uppercase tracking-wider block">Defense Note</span>
+            <div className="p-3.5 rounded-2xl border border-rule bg-slate-100">
+              <span className="font-mono text-[10px] font-bold text-ink uppercase tracking-wider block">Defense Note</span>
               <p className="font-hand text-sm text-ink-soft mt-1">{currentCtx.defenseNote}</p>
             </div>
 
             {/* Quick Test Status */}
-            <div className="p-2.5 rounded bg-ledger-green/10 border border-ledger-green/30 text-ledger-green font-mono text-[11px] flex items-center justify-between">
+            <div className="p-2.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-[11px] flex items-center justify-between px-4">
               <span>Vitest Engine Tests</span>
               <span className="font-bold">14 / 14 PASSING</span>
             </div>

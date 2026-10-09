@@ -347,7 +347,7 @@ export function BankAccountDetailsForm() {
 
           <button
             type="submit"
-            className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs font-bold shadow-sm transition-colors cursor-pointer flex items-center gap-2"
+            className="px-5 py-2.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white text-xs font-bold transition-colors cursor-pointer flex items-center gap-2"
           >
             <ShieldCheck className="w-4 h-4" />
             <span>Save Account Details</span>

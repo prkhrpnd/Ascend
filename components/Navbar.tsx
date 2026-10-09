@@ -19,6 +19,7 @@ import {
   ShieldCheck,
   ChevronDown,
   Sparkles,
+  BookOpen,
 } from "lucide-react";
 
 export function Navbar() {
@@ -34,6 +35,7 @@ export function Navbar() {
     { href: "/spending", label: "Spending Analysis", icon: PieChart },
     { href: "/categories", label: "Expense Categories", icon: Layers },
     { href: "/cashflow", label: "Cash Flow", icon: Activity },
+    { href: "/learn", label: "Learn", icon: BookOpen },
   ];
 
   // Secondary credit & underwriting products
@@ -48,14 +50,14 @@ export function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-rule">
+    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#1c1c1a]/95 backdrop-blur-md border-b border-rule">
       {/* Top Demo Context Bar */}
-      <div className="bg-blue-50/80 border-b border-blue-100 px-4 py-1.5 text-xs text-blue-900 flex items-center justify-between">
+      <div className="bg-[#f6f6f3] dark:bg-[#1c1c1a] border-b border-rule px-4 py-1.5 text-xs text-ink-soft flex items-center justify-between">
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-medium">
-              Synthetic Demo Student: <strong>{profile.name}</strong> ({profile.college})
+            <span className="font-medium text-ink">
+              Synthetic Demo Student: <strong className="font-semibold">{profile.name}</strong> ({profile.college})
             </span>
             <SimulationBadge label="PROTOTYPE" size="sm" className="hidden sm:inline-flex" />
           </div>
@@ -63,9 +65,9 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => loadPriyaDemoStatement()}
-              className="font-mono text-[11px] text-blue-700 hover:text-blue-900 underline flex items-center gap-1 cursor-pointer"
+              className="font-mono text-[11px] text-ink-soft hover:text-ink px-2.5 py-0.5 rounded-full hover:bg-slate-200/60 transition-colors flex items-center gap-1 cursor-pointer"
             >
-              <Sparkles className="w-3 h-3 text-blue-600" />
+              <Sparkles className="w-3 h-3 text-ink-soft" />
               <span>Reset to Priya Statement</span>
             </button>
           </div>
@@ -77,11 +79,13 @@ export function Navbar() {
         {/* Brand */}
         <div className="flex items-center gap-6">
           <NextLink href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-serif font-black text-base shadow-sm group-hover:scale-105 transition-transform">
-              A
-            </div>
+            <img
+              src="/ascend-logo.png"
+              alt="Ascend logo"
+              className="w-8 h-8 object-contain shrink-0 group-hover:scale-105 transition-transform"
+            />
             <div>
-              <span className="font-serif font-black text-xl tracking-tight text-ink">
+              <span className="font-bold text-xl tracking-tight text-ink">
                 Ascend
               </span>
               <span className="hidden sm:inline-block font-sans text-[11px] text-ink-soft ml-2 border-l border-rule pl-2">
@@ -99,10 +103,10 @@ export function Navbar() {
                 <NextLink
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5 transition-colors ${
                     isActive
-                      ? "bg-blue-50 text-blue-700 font-bold border border-blue-200"
-                      : "text-ink-soft hover:text-ink hover:bg-slate-50"
+                      ? "bg-ink text-white font-bold"
+                      : "text-ink-soft hover:text-ink hover:bg-slate-200/60"
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -119,16 +123,16 @@ export function Navbar() {
           <div className="relative hidden md:block">
             <button
               onClick={() => setCreditMenuOpen(!creditMenuOpen)}
-              className="px-3 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-rule text-xs font-medium text-ink flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 rounded-full bg-slate-200/80 hover:bg-slate-300/80 border border-slate-300 text-xs font-bold text-ink flex items-center gap-1.5 transition-colors cursor-pointer"
             >
-              <CreditCard className="w-3.5 h-3.5 text-blue-600" />
+              <CreditCard className="w-3.5 h-3.5 text-ink" />
               <span>Starter Credit Line</span>
               <ChevronDown className="w-3 h-3 text-ink-soft" />
             </button>
 
             {creditMenuOpen && (
               <div
-                className="absolute right-0 mt-2 w-64 bg-white border border-rule rounded-xl shadow-lg p-2 z-50 text-xs"
+                className="absolute right-0 mt-2 w-64 bg-white dark:bg-[#1c1c1a] border border-rule rounded-2xl p-2 z-50 text-xs"
                 onMouseLeave={() => setCreditMenuOpen(false)}
               >
                 <div className="px-2.5 py-1 text-[10px] font-mono text-ink-soft uppercase tracking-wider border-b border-rule mb-1">
@@ -139,7 +143,7 @@ export function Navbar() {
                     key={c.href}
                     href={c.href}
                     onClick={() => setCreditMenuOpen(false)}
-                    className="block px-2.5 py-1.5 rounded-lg hover:bg-slate-50 text-ink hover:text-blue-600 transition-colors"
+                    className="block px-2.5 py-1.5 rounded-xl hover:bg-slate-100/80 text-ink hover:text-ink font-medium transition-colors"
                   >
                     {c.label}
                   </NextLink>
@@ -148,10 +152,10 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Quick Credit Eligibility Button */}
+          {/* Quick Credit Eligibility Button - Primary Pinterest Red CTA */}
           <NextLink
             href="/assess"
-            className="px-3.5 py-1.5 rounded-lg bg-blue-600 text-white font-mono text-xs font-bold shadow-sm hover:bg-blue-700 transition-colors hidden sm:flex items-center gap-1.5"
+            className="px-4 py-1.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white text-xs font-bold transition-colors hidden sm:flex items-center gap-1.5"
           >
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Credit Check</span>
@@ -160,7 +164,7 @@ export function Navbar() {
           {/* Dark Mode Toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-lg border border-rule text-ink-soft hover:text-ink hover:bg-slate-50 transition-colors cursor-pointer"
+            className="p-2 rounded-full border border-rule text-ink-soft hover:text-ink hover:bg-slate-200/60 transition-colors cursor-pointer"
             title={darkMode ? "Switch to Day Mode" : "Switch to Night Mode"}
             aria-label="Toggle theme"
           >
@@ -170,7 +174,7 @@ export function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg border border-rule text-ink-soft hover:text-ink lg:hidden cursor-pointer"
+            className="p-2 rounded-full border border-rule text-ink-soft hover:text-ink hover:bg-slate-200/60 lg:hidden cursor-pointer"
             aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -180,7 +184,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-rule bg-white px-4 py-3 space-y-2 text-xs">
+        <div className="lg:hidden border-t border-rule bg-white/95 dark:bg-[#1c1c1a]/95 backdrop-blur-md px-4 py-3 space-y-2 text-xs">
           <div className="font-mono text-[10px] text-ink-soft uppercase tracking-wider">
             Statement Analytics
           </div>
@@ -191,13 +195,13 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-full font-medium ${
                   pathname === item.href
-                    ? "bg-blue-50 text-blue-700 font-bold"
-                    : "text-ink hover:bg-slate-50"
+                    ? "bg-ink text-white font-bold"
+                    : "text-ink hover:bg-slate-100/60"
                 }`}
               >
-                <Icon className="w-4 h-4 text-blue-600" />
+                <Icon className="w-4 h-4 text-ink" />
                 <span>{item.label}</span>
               </NextLink>
             );
@@ -211,7 +215,7 @@ export function Navbar() {
               key={c.href}
               href={c.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-1.5 rounded-lg text-ink hover:bg-slate-50"
+              className="block px-3.5 py-1.5 rounded-full text-ink hover:bg-slate-100/60 font-medium"
             >
               {c.label}
             </NextLink>

@@ -5,53 +5,86 @@
 @tailwind utilities;
 
 :root {
-  /* Polished modern fintech palette: light blue, white, and subtle navy */
-  --paper: #F0F7FF;
-  --paper-2: #FFFFFF;
-  --ink: #0F172A;
-  --ink-soft: #475569;
-  --vermilion: #E11D48;
-  --marigold: #F59E0B;
-  --ledger-green: #059669;
-  --rule: #E2E8F0;
+  /* Pinterest-inspired design system */
+  --paper: #fbfbf9;          /* Light warm cream canvas */
+  --paper-2: #ffffff;        /* Crisp white card surface */
+  --paper-muted: #f6f6f3;    /* Soft warm cream surface */
+  --ink: #111110;            /* Near-black headings */
+  --ink-body: #33332e;       /* Warm dark gray body text */
+  --ink-soft: #62625b;       /* Muted warm gray secondary text */
+  --rule: #e5e5e0;           /* Subtle 1px hairline divider */
+  --rule-strong: #dadad3;    /* Stronger hairline border */
+  --vermilion: #9e0a0a;      /* Distinct deep debit/negative/error red */
+  --marigold: #ff9500;       /* Warning amber */
+  --ledger-green: #16a34a;   /* Positive / safe green */
+  --action-blue: #435ee5;    /* Focus blue / link accent */
+  --focus-blue: #435ee5;     /* Accessibility double-ring focus blue */
+  --pin-red: #e60023;        /* Pinterest red for primary CTAs only */
+  --pin-red-pressed: #cc001f;/* Pressed Pinterest red */
+  --surface-dark: #262622;   /* Flat charcoal surface */
 }
 
 .dark {
-  --paper: #0B1120;
-  --paper-2: #1E293B;
-  --ink: #F8FAFC;
-  --ink-soft: #94A3B8;
-  --vermilion: #FB7185;
-  --marigold: #FBBF24;
-  --ledger-green: #10B981;
-  --rule: #334155;
+  --paper: #111110;
+  --paper-2: #1c1c1a;
+  --paper-muted: #262622;
+  --ink: #fbfbf9;
+  --ink-body: #dadad3;
+  --ink-soft: #9e9e96;
+  --rule: #33332e;
+  --rule-strong: #45453f;
+  --vermilion: #e63946;
+  --marigold: #ff9f0a;
+  --ledger-green: #22c55e;
+  --action-blue: #435ee5;
+  --focus-blue: #5b73e8;
+  --pin-red: #e60023;
+  --pin-red-pressed: #cc001f;
+  --surface-dark: #181816;
 }
 
 body {
   background-color: var(--paper);
-  color: var(--ink);
+  color: var(--ink-body);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+h2, h3 {
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* Double ring focus for accessibility */
+:focus-visible {
+  outline: 2px solid #435ee5;
+  outline-offset: 2px;
+}
+
 /* Subtle modern grid pattern */
 .fintech-grid {
-  background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 0);
+  background-image: radial-gradient(rgba(17, 17, 16, 0.04) 1px, transparent 0);
   background-size: 20px 20px;
 }
 
 .dark .fintech-grid {
-  background-image: radial-gradient(rgba(248, 250, 252, 0.05) 1px, transparent 0);
+  background-image: radial-gradient(rgba(251, 251, 249, 0.04) 1px, transparent 0);
 }
 
-/* Card styling utilities */
+/* Card styling utilities - flat with hairline border */
 .fintech-card {
   background-color: var(--paper-2);
   border: 1px solid var(--rule);
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04);
+  border-radius: 1rem;
+  box-shadow: none;
 }
 
 /* Clean double ruled totals */

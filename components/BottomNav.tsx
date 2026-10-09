@@ -17,7 +17,7 @@ export function BottomNav() {
   ];
 
   return (
-    <nav className="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-paper/95 backdrop-blur border-t border-rule safe-area-bottom">
+    <nav className="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-white/95 dark:bg-[#1c1c1a]/95 backdrop-blur-md border-t border-rule safe-area-bottom">
       <div className="grid grid-cols-5 h-16">
         {items.map((item) => {
           const Icon = item.icon;
@@ -27,11 +27,11 @@ export function BottomNav() {
               key={item.href}
               href={item.href}
               className={`flex flex-col items-center justify-center gap-1 transition-colors ${
-                isActive ? "text-ledger-green font-bold" : "text-ink-soft hover:text-ink"
+                isActive ? "text-pin-red font-bold" : "text-ink-soft hover:text-ink"
               }`}
             >
               <Icon className="w-5 h-5" />
-              <span className="text-[10px] font-mono tracking-tight">{item.label}</span>
+              <span className="text-[10px] font-sans font-medium tracking-tight">{item.label}</span>
             </NextLink>
           );
         })}

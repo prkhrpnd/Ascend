@@ -32,7 +32,7 @@ export default function AssessPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 font-mono text-xs">
           <NextLink
             href="/link"
-            className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-bold shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+            className="px-6 py-2.5 rounded-full bg-pin-red text-white font-bold text-xs hover:bg-pin-pressed transition-colors flex items-center gap-2 cursor-pointer"
           >
             <span>Link Bank Account</span>
             <ArrowRight className="w-4 h-4" />
@@ -40,7 +40,7 @@ export default function AssessPage() {
 
           <NextLink
             href="/link"
-            className="px-6 py-3 rounded-lg border border-rule bg-paper-2 hover:bg-rule/30 text-ink font-semibold transition-colors flex items-center gap-2"
+            className="px-6 py-2.5 rounded-full bg-[#e5e5e0] hover:bg-[#dadad3] text-[#111110] font-medium text-xs transition-colors flex items-center gap-2 cursor-pointer"
           >
             <FileText className="w-4 h-4 text-ink-soft" />
             <span>Upload Statement CSV</span>
@@ -55,7 +55,7 @@ export default function AssessPage() {
           <button
             type="button"
             onClick={() => loadSampleProfile("priya")}
-            className="px-4 py-2 rounded bg-paper border border-rule hover:bg-paper-2 text-ink text-[11px] cursor-pointer"
+            className="px-4 py-2 rounded-full bg-slate-100 border border-slate-300 hover:bg-slate-200 text-ink text-[11px] cursor-pointer"
           >
             Load Simulated Benchmark Statement
           </button>
@@ -83,7 +83,7 @@ export default function AssessPage() {
       </div>
 
       {/* Mandatory Disclaimer Callout */}
-      <div className="p-4 rounded-xl bg-paper-2 border-2 border-rule text-xs space-y-1">
+      <div className="p-4 rounded-2xl bg-white border border-rule text-xs space-y-1">
         <span className="font-mono text-[10px] font-bold text-ledger-green uppercase tracking-wider block">
           Crucial Regulatory Framing
         </span>
@@ -96,7 +96,7 @@ export default function AssessPage() {
       </div>
 
       {/* The Three Caps Panel */}
-      <section className="p-6 rounded-xl bg-paper-2 border border-rule space-y-4">
+      <section className="p-6 rounded-2xl bg-white border border-rule space-y-4">
         <div>
           <span className="font-mono text-[10px] font-bold text-ledger-green uppercase tracking-wider block">
             Conservative Cap Triad
@@ -109,16 +109,16 @@ export default function AssessPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-mono">
           {/* Cap 1: Tier Cap */}
           <div
-            className={`p-4 rounded-lg border space-y-2 ${
+            className={`p-4 rounded-2xl border space-y-2 ${
               limitAssessment.bindingCap === "tierCap"
-                ? "bg-paper border-2 border-ledger-green shadow-sm"
-                : "bg-paper border-rule"
+                ? "bg-slate-100 border-2 border-ledger-green"
+                : "bg-slate-100 border-rule"
             }`}
           >
             <div className="flex items-center justify-between">
               <span className="font-bold text-ink-soft text-[11px]">1. Tier Starter Cap</span>
               {limitAssessment.bindingCap === "tierCap" && (
-                <span className="px-1.5 py-0.5 rounded bg-ledger-green text-paper text-[9px] font-bold">
+                <span className="px-1.5 py-0.5 rounded-full bg-ledger-green text-white text-[9px] font-bold">
                   BINDING CAP
                 </span>
               )}
@@ -133,16 +133,16 @@ export default function AssessPage() {
 
           {/* Cap 2: Capacity Cap */}
           <div
-            className={`p-4 rounded-lg border space-y-2 ${
+            className={`p-4 rounded-2xl border space-y-2 ${
               limitAssessment.bindingCap === "capacityCap"
-                ? "bg-paper border-2 border-ledger-green shadow-sm"
-                : "bg-paper border-rule"
+                ? "bg-slate-100 border-2 border-ledger-green"
+                : "bg-slate-100 border-rule"
             }`}
           >
             <div className="flex items-center justify-between">
               <span className="font-bold text-ink-soft text-[11px]">2. Capacity Cap (20%)</span>
               {limitAssessment.bindingCap === "capacityCap" && (
-                <span className="px-1.5 py-0.5 rounded bg-ledger-green text-paper text-[9px] font-bold">
+                <span className="px-1.5 py-0.5 rounded-full bg-ledger-green text-white text-[9px] font-bold">
                   BINDING CAP
                 </span>
               )}
@@ -157,16 +157,16 @@ export default function AssessPage() {
 
           {/* Cap 3: Stress Due-Date Cap */}
           <div
-            className={`p-4 rounded-lg border space-y-2 ${
+            className={`p-4 rounded-2xl border space-y-2 ${
               limitAssessment.bindingCap === "stressDueDateCap"
-                ? "bg-paper border-2 border-ledger-green shadow-sm"
-                : "bg-paper border-rule"
+                ? "bg-slate-100 border-2 border-ledger-green"
+                : "bg-slate-100 border-rule"
             }`}
           >
             <div className="flex items-center justify-between">
               <span className="font-bold text-ink-soft text-[11px]">3. Stress Due-Date Cap</span>
               {limitAssessment.bindingCap === "stressDueDateCap" && (
-                <span className="px-1.5 py-0.5 rounded bg-ledger-green text-paper text-[9px] font-bold">
+                <span className="px-1.5 py-0.5 rounded-full bg-ledger-green text-white text-[9px] font-bold">
                   BINDING CAP
                 </span>
               )}
@@ -181,7 +181,7 @@ export default function AssessPage() {
         </div>
 
         {/* Final Limit Decision */}
-        <div className="p-4 rounded-lg bg-paper border border-rule flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
+        <div className="p-4 rounded-2xl bg-slate-100 border border-rule flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
           <div>
             <span className="text-ink-soft text-[10px] block">Approved Starter Credit Ceiling:</span>
             <span className="font-serif font-black text-3xl text-ledger-green">
@@ -210,8 +210,8 @@ export default function AssessPage() {
             return (
               <div
                 key={bt.lineAmountPaise}
-                className={`p-4 rounded-xl border text-xs font-mono space-y-3 transition-colors ${
-                  isApprovedLine ? "bg-paper-2 border-2 border-rule" : "bg-paper border-rule/80"
+                className={`p-4 rounded-2xl border text-xs font-mono space-y-3 transition-colors ${
+                  isApprovedLine ? "bg-white border-2 border-rule" : "bg-slate-100 border-rule"
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-rule/50 pb-2">
@@ -220,7 +220,7 @@ export default function AssessPage() {
                       Candidate Line: {formatPaise(bt.lineAmountPaise)}
                     </span>
                     {isApprovedLine && (
-                      <span className="px-2 py-0.5 rounded bg-ledger-green text-paper text-[10px] font-bold">
+                      <span className="px-2 py-0.5 rounded-full bg-ledger-green text-white text-[10px] font-bold">
                         RECOMMENDED
                       </span>
                     )}
@@ -229,7 +229,7 @@ export default function AssessPage() {
                     <span className="text-ink">
                       Normal Case: <strong>{bt.normalMonthsPassed} of {bt.totalMonths} months</strong>
                     </span>
-                    <span className={bt.stressMonthsPassed === bt.totalMonths ? "text-ledger-green font-bold" : "text-red-700 font-bold"}>
+                    <span className={bt.stressMonthsPassed === bt.totalMonths ? "text-ledger-green font-bold" : "text-vermilion font-bold"}>
                       Stress Case: <strong>{bt.stressMonthsPassed} of {bt.totalMonths} months</strong>
                     </span>
                   </div>
@@ -238,7 +238,7 @@ export default function AssessPage() {
                 {/* Month Tick Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-6 gap-2">
                   {bt.details.map((m) => (
-                    <div key={m.monthKey} className="p-2 rounded bg-paper border border-rule space-y-1.5">
+                    <div key={m.monthKey} className="p-2.5 rounded-xl bg-white border border-rule space-y-1.5">
                       <span className="text-[10px] text-ink-soft font-bold block">{m.monthKey}</span>
 
                       {/* Normal Status */}
@@ -249,7 +249,7 @@ export default function AssessPage() {
                             <Check className="w-3 h-3 stroke-[3]" /> PASS
                           </span>
                         ) : (
-                          <span className="text-red-700 flex items-center font-bold">
+                          <span className="text-vermilion flex items-center font-bold">
                             <X className="w-3 h-3 stroke-[3]" /> FAIL
                           </span>
                         )}
@@ -263,7 +263,7 @@ export default function AssessPage() {
                             <Check className="w-3 h-3 stroke-[3]" /> PASS
                           </span>
                         ) : (
-                          <span className="text-red-700 flex items-center font-bold">
+                          <span className="text-vermilion flex items-center font-bold">
                             <X className="w-3 h-3 stroke-[3]" /> FAIL
                           </span>
                         )}
@@ -285,7 +285,7 @@ export default function AssessPage() {
 
         <NextLink
           href="/simulator"
-          className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-mono font-bold text-xs shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+          className="px-6 py-2.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white font-bold text-xs transition-colors flex items-center gap-2 cursor-pointer"
         >
           <span>Next: Affordability Simulator</span>
           <ArrowRight className="w-4 h-4" />

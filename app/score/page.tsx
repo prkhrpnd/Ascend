@@ -62,12 +62,12 @@ export default function HistoryStrengthPage() {
       </div>
 
       {/* Mandatory Regulatory Framing Callout */}
-      <div className="p-3.5 rounded-lg bg-paper-2 border border-rule text-xs font-mono text-ink-soft leading-relaxed">
+      <div className="p-3.5 rounded-2xl bg-white border border-rule text-xs font-mono text-ink-soft leading-relaxed">
         <strong>Important notice:</strong> Illustrative progress indicator only. Not a credit bureau score. Formal bureau scores (such as CIBIL, Experian, or CRIF) are calculated directly by licensed bureaus after 6 months of active repayment reporting.
       </div>
 
       {/* Altimeter Gauge Panel */}
-      <section className="p-6 rounded-xl bg-paper-2 border border-rule space-y-6">
+      <section className="p-6 rounded-2xl bg-white border border-rule space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <span className="font-mono text-xs font-bold text-ledger-green uppercase tracking-wider block">
@@ -85,8 +85,8 @@ export default function HistoryStrengthPage() {
           {/* Goal Milestones */}
           <div className="flex flex-col gap-2 text-xs font-mono">
             <div
-              className={`p-2.5 rounded-lg border flex items-center justify-between gap-4 ${
-                score >= 70 ? "bg-ledger-green/10 border-ledger-green text-ledger-green font-bold" : "bg-paper border-rule text-ink-soft"
+              className={`p-2.5 rounded-xl border flex items-center justify-between gap-4 ${
+                score >= 70 ? "bg-ledger-green/10 border-ledger-green text-ledger-green font-bold" : "bg-slate-100 border-rule text-ink-soft"
               }`}
             >
               <span>Milestone: Tenancy Rental Ready (70+)</span>
@@ -94,8 +94,8 @@ export default function HistoryStrengthPage() {
             </div>
 
             <div
-              className={`p-2.5 rounded-lg border flex items-center justify-between gap-4 ${
-                score >= 85 ? "bg-ledger-green/10 border-ledger-green text-ledger-green font-bold" : "bg-paper border-rule text-ink-soft"
+              className={`p-2.5 rounded-xl border flex items-center justify-between gap-4 ${
+                score >= 85 ? "bg-ledger-green/10 border-ledger-green text-ledger-green font-bold" : "bg-slate-100 border-rule text-ink-soft"
               }`}
             >
               <span>Milestone: Two-Wheeler Finance Ready (85+)</span>
@@ -106,10 +106,10 @@ export default function HistoryStrengthPage() {
 
         {/* Progress Bar */}
         <div className="space-y-1">
-          <div className="w-full bg-paper rounded-full h-4 overflow-hidden border border-rule flex p-0.5">
+          <div className="w-full bg-slate-100 rounded-full h-4 overflow-hidden border border-rule flex p-0.5">
             <div
               style={{ width: `${score}%` }}
-              className="bg-gradient-to-r from-marigold to-ledger-green h-full rounded-full transition-all duration-700"
+              className="bg-ledger-green h-full rounded-full transition-all duration-700"
             />
           </div>
           <div className="flex justify-between text-[10px] font-mono text-ink-soft">
@@ -124,7 +124,7 @@ export default function HistoryStrengthPage() {
 
       {/* Graduation Card */}
       {isGraduated ? (
-        <section className="p-6 rounded-xl bg-ledger-green/10 border-2 border-ledger-green space-y-4">
+        <section className="p-6 rounded-2xl bg-ledger-green/10 border border-ledger-green space-y-4">
           <div className="flex items-center gap-2">
             <Award className="w-6 h-6 text-ledger-green" />
             <h2 className="font-serif font-black text-2xl text-ink">
@@ -136,7 +136,7 @@ export default function HistoryStrengthPage() {
             Congratulations, {studentName}! You have completed 6 consecutive clean cycles with responsible utilisation and navigated real-world cash stress without late defaults. Your credit file demonstrates verified discipline.
           </p>
 
-          <div className="p-4 rounded-lg bg-paper border border-ledger-green/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
+          <div className="p-4 rounded-2xl bg-white border border-ledger-green/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
             <div>
               <span className="font-bold text-ink block">Partner Prime Referral Available</span>
               <span className="text-ink-soft text-[11px]">
@@ -146,7 +146,7 @@ export default function HistoryStrengthPage() {
 
             <button
               onClick={() => alert("Simulated referral dispatched to LendPartner Finance.")}
-              className="px-4 py-2.5 rounded bg-ledger-green text-paper font-bold hover:bg-[#23472c] transition-colors flex items-center gap-1.5 self-start sm:self-auto cursor-pointer"
+              className="px-4 py-2.5 rounded-full bg-pin-red text-white font-bold hover:bg-pin-pressed transition-colors flex items-center gap-1.5 self-start sm:self-auto cursor-pointer"
             >
               <span>Accept Prime Referral</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -154,10 +154,10 @@ export default function HistoryStrengthPage() {
           </div>
         </section>
       ) : (
-        <section className="p-5 rounded-xl bg-paper-2 border border-rule space-y-3 text-xs font-mono">
+        <section className="p-5 rounded-2xl bg-white border border-rule space-y-3 text-xs font-mono">
           <h2 className="font-serif font-bold text-base text-ink">Path to Bureau-Ready Graduation</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="p-3 rounded-lg bg-paper border border-rule space-y-1">
+            <div className="p-3 rounded-xl bg-slate-100 border border-rule space-y-1">
               <span className="text-ink-soft text-[10px] block">Criteria 1</span>
               <span className="font-bold text-ink block">6 Clean Cycles</span>
               <span className="text-ink-soft text-[11px] font-sans">
@@ -165,7 +165,7 @@ export default function HistoryStrengthPage() {
               </span>
             </div>
 
-            <div className="p-3 rounded-lg bg-paper border border-rule space-y-1">
+            <div className="p-3 rounded-xl bg-slate-100 border border-rule space-y-1">
               <span className="text-ink-soft text-[10px] block">Criteria 2</span>
               <span className="font-bold text-ink block">1 Stress Cycle Passed</span>
               <span className="text-ink-soft text-[11px] font-sans">
@@ -173,7 +173,7 @@ export default function HistoryStrengthPage() {
               </span>
             </div>
 
-            <div className="p-3 rounded-lg bg-paper border border-rule space-y-1">
+            <div className="p-3 rounded-xl bg-slate-100 border border-rule space-y-1">
               <span className="text-ink-soft text-[10px] block">Criteria 3</span>
               <span className="font-bold text-ink block">Utilisation Under 50%</span>
               <span className="text-ink-soft text-[11px] font-sans">
@@ -186,7 +186,7 @@ export default function HistoryStrengthPage() {
 
       {/* Step-Up Tier Offer */}
       {canStepUp && (
-        <section className="p-5 rounded-xl bg-paper border-2 border-marigold space-y-3 text-xs font-mono">
+        <section className="p-5 rounded-2xl bg-white border border-marigold space-y-3 text-xs font-mono">
           <div className="flex items-center justify-between">
             <div>
               <span className="text-[10px] text-marigold font-bold uppercase tracking-wider block">
@@ -198,7 +198,7 @@ export default function HistoryStrengthPage() {
             </div>
             <button
               onClick={handleApplyStepUp}
-              className="px-4 py-2 rounded bg-ink text-paper font-bold hover:bg-ink-soft transition-colors cursor-pointer"
+              className="px-5 py-2 rounded-full bg-pin-red text-white font-bold hover:bg-pin-pressed transition-colors cursor-pointer text-xs"
             >
               Opt In to Upgrade
             </button>
@@ -210,7 +210,7 @@ export default function HistoryStrengthPage() {
       )}
 
       {/* Classmate Referral Loop */}
-      <section className="p-5 rounded-xl bg-paper-2 border border-rule space-y-3 text-xs font-mono">
+      <section className="p-5 rounded-2xl bg-white border border-rule space-y-3 text-xs font-mono">
         <div className="flex items-center gap-2">
           <Gift className="w-4 h-4 text-ledger-green" />
           <h2 className="font-serif font-bold text-base text-ink">Classmate Referral Loop (Simulation)</h2>
@@ -224,14 +224,14 @@ export default function HistoryStrengthPage() {
             type="text"
             readOnly
             value={referralCode}
-            className="p-2 rounded bg-paper border border-rule font-bold text-ink text-xs select-all"
+            className="p-2 rounded-xl bg-slate-100 border border-rule font-bold text-ink text-xs select-all"
           />
           <button
             onClick={() => {
               setInviteCopied(true);
               setTimeout(() => setInviteCopied(false), 2000);
             }}
-            className="px-3 py-2 rounded bg-ink text-paper text-xs font-bold hover:bg-ink-soft transition-colors cursor-pointer"
+            className="px-4 py-2 rounded-full bg-[#e5e5e0] hover:bg-[#dadad3] text-[#111110] text-xs font-bold transition-colors cursor-pointer"
           >
             {inviteCopied ? "Copied" : "Copy Code"}
           </button>
@@ -249,7 +249,7 @@ export default function HistoryStrengthPage() {
 
         <NextLink
           href="/report"
-          className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-mono font-bold text-xs shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+          className="px-6 py-2.5 rounded-full bg-pin-red text-white font-bold text-xs hover:bg-pin-pressed transition-colors flex items-center gap-2 cursor-pointer"
         >
           <span>Next: Shareable Report Card</span>
           <ArrowRight className="w-4 h-4" />

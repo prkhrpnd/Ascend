@@ -33,9 +33,9 @@ export default function BankStatementsPage() {
   return (
     <div className="space-y-8 max-w-7xl mx-auto py-2">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 sm:p-8 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-mono">
-          <Database className="w-3.5 h-3.5 text-blue-600" />
+      <div className="bg-white rounded-2xl border border-rule p-6 sm:p-8 space-y-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-ink text-xs font-mono">
+          <Database className="w-3.5 h-3.5 text-ink" />
           <span>Statement Ingestion & Verification Portal</span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-serif font-black text-ink tracking-tight">
@@ -55,7 +55,7 @@ export default function BankStatementsPage() {
 
       {/* Statement Validation & Technical Audit Report */}
       {transactions.length > 0 && (
-        <div className="bg-white rounded-2xl border border-rule shadow-sm p-6 sm:p-8 space-y-6">
+        <div className="bg-white rounded-2xl border border-rule p-6 sm:p-8 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-rule pb-4">
             <div>
               <h2 className="text-lg font-serif font-bold text-ink">
@@ -69,15 +69,15 @@ export default function BankStatementsPage() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setShowRawCSV(!showRawCSV)}
-                className="px-3 py-1.5 rounded-lg border border-rule hover:bg-slate-50 text-xs text-ink font-mono flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-3.5 py-1.5 rounded-full border border-rule hover:bg-slate-100 text-xs text-ink font-medium flex items-center gap-1.5 transition-colors cursor-pointer"
               >
-                <Code2 className="w-3.5 h-3.5 text-blue-600" />
+                <Code2 className="w-3.5 h-3.5 text-ink" />
                 <span>{showRawCSV ? "Hide Raw CSV" : "View Raw CSV Data"}</span>
               </button>
 
               <NextLink
                 href="/assess"
-                className="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-4 py-1.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>Evaluate Credit Eligibility</span>
@@ -88,7 +88,7 @@ export default function BankStatementsPage() {
 
           {/* Audit Verification Table */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-            <div className="p-4 rounded-xl bg-slate-50 border border-rule space-y-3">
+            <div className="p-4 rounded-2xl bg-slate-100 border border-rule space-y-3">
               <h3 className="font-bold text-ink">File & Coverage Metadata</h3>
               <div className="space-y-1.5 font-mono text-[11px]">
                 <div className="flex justify-between py-1 border-b border-slate-200">
@@ -114,7 +114,7 @@ export default function BankStatementsPage() {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-rule space-y-3">
+            <div className="p-4 rounded-2xl bg-slate-100 border border-rule space-y-3">
               <h3 className="font-bold text-ink">Sanitization & Balance Verification</h3>
               <div className="space-y-1.5 font-mono text-[11px]">
                 <div className="flex justify-between py-1 border-b border-slate-200">
@@ -150,7 +150,7 @@ export default function BankStatementsPage() {
                 <span className="font-mono">Raw Uploaded CSV Payload Preview</span>
                 <span>{rawCSV.length} bytes</span>
               </div>
-              <pre className="p-4 rounded-xl bg-slate-900 text-slate-100 text-[11px] font-mono overflow-x-auto max-h-64 leading-relaxed">
+              <pre className="p-4 rounded-2xl bg-slate-900 text-slate-100 text-[11px] font-mono overflow-x-auto max-h-64 leading-relaxed">
                 {rawCSV || "No raw CSV payload stored."}
               </pre>
             </div>

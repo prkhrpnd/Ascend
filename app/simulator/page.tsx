@@ -162,7 +162,7 @@ export default function SimulatorPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 font-mono text-xs">
           <NextLink
             href="/link"
-            className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-bold shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+            className="px-6 py-2.5 rounded-full bg-pin-red text-white font-bold text-xs hover:bg-pin-pressed transition-colors flex items-center gap-2 cursor-pointer"
           >
             <span>Link Bank Account</span>
             <ArrowRight className="w-4 h-4" />
@@ -170,7 +170,7 @@ export default function SimulatorPage() {
 
           <NextLink
             href="/link"
-            className="px-6 py-3 rounded-lg border border-rule bg-paper-2 hover:bg-rule/30 text-ink font-semibold transition-colors flex items-center gap-2"
+            className="px-6 py-2.5 rounded-full bg-[#e5e5e0] hover:bg-[#dadad3] text-[#111110] font-medium text-xs transition-colors flex items-center gap-2 cursor-pointer"
           >
             <FileText className="w-4 h-4 text-ink-soft" />
             <span>Upload Statement CSV</span>
@@ -184,7 +184,7 @@ export default function SimulatorPage() {
           <button
             type="button"
             onClick={() => loadSampleProfile("priya")}
-            className="px-4 py-2 rounded bg-paper border border-rule hover:bg-paper-2 text-ink text-[11px] cursor-pointer"
+            className="px-4 py-2 rounded-full bg-slate-100 border border-slate-300 hover:bg-slate-200 text-ink text-[11px] cursor-pointer"
           >
             Load Simulated Benchmark Statement
           </button>
@@ -197,7 +197,7 @@ export default function SimulatorPage() {
   if (!hasRunningBalances || startingBalancePaise <= 0) {
     return (
       <div className="max-w-3xl mx-auto py-10 space-y-6">
-        <div className="p-6 rounded-xl bg-amber-50/70 border border-amber-300 text-ink space-y-4">
+        <div className="p-6 rounded-2xl bg-amber-50/70 border border-amber-300 text-ink space-y-4">
           <div className="flex items-start gap-3">
             <AlertCircle className="w-6 h-6 text-amber-700 shrink-0 mt-0.5" />
             <div className="space-y-1">
@@ -210,7 +210,7 @@ export default function SimulatorPage() {
             </div>
           </div>
 
-          <div className="p-4 rounded-lg bg-paper border border-amber-200 text-xs font-mono space-y-2 text-ink-soft">
+          <div className="p-4 rounded-xl bg-white border border-amber-200 text-xs font-mono space-y-2 text-ink-soft">
             <p className="font-semibold text-ink text-[11px] uppercase tracking-wider">
               Diagnostic Information
             </p>
@@ -227,7 +227,7 @@ export default function SimulatorPage() {
           <div className="pt-2 flex items-center gap-3 font-mono text-xs">
             <NextLink
               href="/link"
-              className="px-5 py-2.5 rounded-lg bg-ledger-green text-paper font-bold hover:bg-[#23472c] transition-colors flex items-center gap-2"
+              className="px-5 py-2.5 rounded-full bg-pin-red text-white font-bold hover:bg-pin-pressed transition-colors flex items-center gap-2 cursor-pointer"
             >
               <FileText className="w-4 h-4" />
               <span>Upload CSV with Balance Column</span>
@@ -235,7 +235,7 @@ export default function SimulatorPage() {
             <button
               type="button"
               onClick={() => loadSampleProfile("priya")}
-              className="px-4 py-2.5 rounded-lg bg-paper border border-rule hover:bg-paper-2 text-ink font-semibold"
+              className="px-4 py-2.5 rounded-full bg-[#e5e5e0] border border-transparent hover:bg-[#dadad3] text-[#111110] font-semibold cursor-pointer"
             >
               Load Benchmark Statement
             </button>
@@ -316,7 +316,7 @@ export default function SimulatorPage() {
       </div>
 
       {/* Statement Source Banner */}
-      <div className="p-4 rounded-xl bg-paper-2 border border-rule flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
+      <div className="p-4 rounded-2xl bg-white border border-rule flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
         <div className="space-y-0.5">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-ledger-green" />
@@ -343,7 +343,7 @@ export default function SimulatorPage() {
       </div>
 
       {/* Simulator Interactive Controls */}
-      <div className="p-6 rounded-xl bg-paper-2 border border-rule space-y-6">
+      <div className="p-6 rounded-2xl bg-white border border-rule space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs font-mono">
           {/* Purchase Slider + Numeric Input */}
           <div className="space-y-2">
@@ -360,7 +360,7 @@ export default function SimulatorPage() {
                   step="50"
                   value={purchaseAmountRupees}
                   onChange={(e) => setPurchaseAmountRupees(Math.max(0, Number(e.target.value)))}
-                  className="w-20 px-2 py-1 rounded bg-paper border border-rule text-right font-bold text-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  className="w-20 px-2 py-1 rounded-xl bg-slate-100 border border-rule text-right font-bold text-ink focus:outline-none focus:ring-1 focus:ring-ink"
                 />
               </div>
             </div>
@@ -392,10 +392,10 @@ export default function SimulatorPage() {
                     key={opt.val}
                     type="button"
                     onClick={() => setPurchaseDayOffset(opt.val)}
-                    className={`px-2 py-0.5 rounded text-[10px] font-bold transition-colors ${
+                    className={`px-2.5 py-1 rounded-full text-[10px] font-semibold transition-colors cursor-pointer ${
                       purchaseDayOffset === opt.val
-                        ? "bg-ledger-green text-paper"
-                        : "bg-paper border border-rule text-ink-soft hover:text-ink"
+                        ? "bg-ink text-white font-bold"
+                        : "bg-white border border-rule text-ink-soft hover:text-ink hover:bg-slate-100"
                     }`}
                   >
                     {opt.label}
@@ -420,7 +420,7 @@ export default function SimulatorPage() {
                   step="50"
                   value={drawAmountRupees}
                   onChange={(e) => setDrawAmountRupees(Math.min(500, Math.max(0, Number(e.target.value))))}
-                  className="w-20 px-2 py-1 rounded bg-paper border border-rule text-right font-bold text-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  className="w-20 px-2 py-1 rounded-xl bg-slate-100 border border-rule text-right font-bold text-ink focus:outline-none focus:ring-1 focus:ring-ink"
                 />
               </div>
             </div>
@@ -460,7 +460,7 @@ export default function SimulatorPage() {
                   step="500"
                   value={allowanceRupees}
                   onChange={(e) => setAllowanceRupees(Math.max(0, Number(e.target.value)))}
-                  className="w-20 px-2 py-0.5 rounded bg-paper border border-rule text-right font-bold text-ink"
+                  className="w-20 px-2 py-0.5 rounded-xl bg-slate-100 border border-rule text-right font-bold text-ink"
                 />
               </div>
             </div>
@@ -481,7 +481,7 @@ export default function SimulatorPage() {
                   step="250"
                   value={earnedRupees}
                   onChange={(e) => setEarnedRupees(Math.max(0, Number(e.target.value)))}
-                  className="w-20 px-2 py-0.5 rounded bg-paper border border-rule text-right font-bold text-ink"
+                  className="w-20 px-2 py-0.5 rounded-xl bg-slate-100 border border-rule text-right font-bold text-ink"
                 />
               </div>
             </div>
@@ -491,7 +491,7 @@ export default function SimulatorPage() {
           </div>
         </div>
 
-        <div className="p-3 rounded-lg bg-paper border border-rule text-[11px] text-ink-soft font-mono flex items-center justify-between">
+        <div className="p-3 rounded-xl bg-slate-100 border border-rule text-[11px] text-ink-soft font-mono flex items-center justify-between">
           <span>Self-declared scenario adjustments change only the projection, never the approved limit.</span>
           <span className="text-ledger-green font-bold uppercase text-[10px]">Deterministic Rule</span>
         </div>
@@ -499,7 +499,7 @@ export default function SimulatorPage() {
 
       {/* Daily Balance Projection Graph */}
       {simResult && (
-        <section className="p-5 rounded-xl bg-paper-2 border border-rule space-y-4">
+        <section className="p-5 rounded-2xl bg-white border border-rule space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-rule pb-3">
             <div>
               <h2 className="font-serif font-bold text-base text-ink">60-Day Forward Projection</h2>
@@ -511,8 +511,8 @@ export default function SimulatorPage() {
               <span className="flex items-center gap-1.5 text-ledger-green font-bold">
                 <span className="w-3 h-1 bg-ledger-green rounded" /> Safe Line
               </span>
-              <span className="flex items-center gap-1.5 text-red-700 font-bold">
-                <span className="w-3 h-1 bg-red-700 rounded" /> Stress Delay
+              <span className="flex items-center gap-1.5 text-vermilion font-bold">
+                <span className="w-3 h-1 bg-vermilion rounded" /> Stress Delay
               </span>
               <span className="flex items-center gap-1.5 text-amber-700 font-bold">
                 <span className="w-3 h-0.5 border-t border-dashed border-amber-700" /> ₹300 Buffer
@@ -521,7 +521,7 @@ export default function SimulatorPage() {
           </div>
 
           {/* Interactive Scaled SVG Chart */}
-          <div className="relative h-72 w-full bg-paper rounded-lg border border-rule p-2 overflow-hidden select-none">
+          <div className="relative h-72 w-full bg-[#fbfbf9] rounded-2xl border border-rule p-2 overflow-hidden select-none">
             <svg
               className="w-full h-full"
               viewBox={`0 0 ${svgWidth} ${svgHeight}`}
@@ -838,7 +838,7 @@ export default function SimulatorPage() {
                     {formatPaise(simResult.minSafeBalancePaise)}
                     <span className="block text-[10px] text-ink-soft font-normal">on {formatDate(simResult.minSafeDateStr)}</span>
                   </td>
-                  <td className="py-2.5 px-4 font-bold text-red-700">
+                  <td className="py-2.5 px-4 font-bold text-vermilion">
                     {formatPaise(simResult.minStressBalancePaise)}
                     <span className="block text-[10px] text-ink-soft font-normal">on {formatDate(simResult.minStressDateStr)}</span>
                   </td>
@@ -874,7 +874,7 @@ export default function SimulatorPage() {
                     {simResult.daysBelowBufferStress === 0 ? (
                       <span className="text-ledger-green">0 days</span>
                     ) : (
-                      <span className="text-red-700 font-bold">{simResult.daysBelowBufferStress} days</span>
+                      <span className="text-vermilion font-bold">{simResult.daysBelowBufferStress} days</span>
                     )}
                   </td>
                   <td className="py-2.5 pl-4 text-ink-soft">
@@ -888,14 +888,14 @@ export default function SimulatorPage() {
                     {simResult.daysBelowZeroSafe === 0 ? (
                       <span className="text-ledger-green">0 days</span>
                     ) : (
-                      <span className="text-red-700 font-bold">{simResult.daysBelowZeroSafe} days</span>
+                      <span className="text-vermilion font-bold">{simResult.daysBelowZeroSafe} days</span>
                     )}
                   </td>
                   <td className="py-2.5 px-4 font-semibold">
                     {simResult.daysBelowZeroStress === 0 ? (
                       <span className="text-ledger-green">0 days</span>
                     ) : (
-                      <span className="text-red-700 font-bold">{simResult.daysBelowZeroStress} days</span>
+                      <span className="text-vermilion font-bold">{simResult.daysBelowZeroStress} days</span>
                     )}
                   </td>
                   <td className="py-2.5 pl-4 text-ink-soft">
@@ -907,7 +907,7 @@ export default function SimulatorPage() {
           </div>
 
           {/* Plain-Language Regulatory & Responsible Finance Disclosure */}
-          <div className="p-3.5 rounded-lg bg-paper border border-rule text-xs font-mono space-y-1 text-ink-soft">
+          <div className="p-3.5 rounded-2xl bg-slate-100 border border-rule text-xs font-mono space-y-1 text-ink-soft">
             <div className="flex items-center gap-1.5 font-bold text-ink text-[11px] uppercase">
               <Info className="w-3.5 h-3.5 text-ledger-green" />
               <span>Responsible Finance Disclosure</span>
@@ -927,7 +927,7 @@ export default function SimulatorPage() {
 
         <NextLink
           href="/offer"
-          className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-mono font-bold text-xs shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+          className="px-6 py-2.5 rounded-full bg-pin-red hover:bg-pin-pressed text-white font-bold text-xs transition-colors flex items-center gap-2 cursor-pointer"
         >
           <span>Next: Review Credit Offer</span>
           <ArrowRight className="w-4 h-4" />

@@ -103,44 +103,44 @@ export default function ReportCardBuilderPage() {
       </div>
 
       {/* Off by default notice */}
-      <div className="p-3.5 rounded-lg bg-paper-2 border border-rule text-xs font-mono text-ink-soft">
+      <div className="p-3.5 rounded-2xl bg-white border border-rule text-xs font-mono text-ink-soft">
         <strong>Privacy rule:</strong> Off by default. Sharing is 100% voluntary. The viewer sees only aggregate totals,
         never merchant names, food delivery orders, or transaction items.
       </div>
 
       {/* Preview Card */}
-      <div className="p-6 rounded-xl bg-paper border-2 border-rule space-y-5 shadow-sm">
+      <div className="p-6 rounded-2xl bg-white border border-rule space-y-5">
         <div className="flex items-center justify-between border-b border-rule pb-3">
           <div>
             <span className="text-[10px] font-mono text-ink-soft uppercase tracking-wider block">Preview</span>
             <h2 className="font-serif font-bold text-lg text-ink">What Verifiers Will See</h2>
           </div>
-          <span className="px-2 py-0.5 rounded bg-ledger-green/10 text-ledger-green text-[10px] font-mono font-bold">
+          <span className="px-2 py-0.5 rounded-full bg-ledger-green/10 text-ledger-green text-[10px] font-mono font-bold">
             TOTALS ONLY
           </span>
         </div>
 
         <div className="grid grid-cols-2 gap-4 text-xs font-mono">
-          <div className="p-3 rounded-lg bg-paper-2 border border-rule">
+          <div className="p-3.5 rounded-2xl bg-slate-100 border border-rule">
             <span className="text-ink-soft text-[10px] block">Student Member</span>
             <span className="font-serif font-bold text-base text-ink block">{reportTotals.studentName}</span>
           </div>
 
-          <div className="p-3 rounded-lg bg-paper-2 border border-rule">
+          <div className="p-3.5 rounded-2xl bg-slate-100 border border-rule">
             <span className="text-ink-soft text-[10px] block">Bills Paid on Time</span>
             <span className="font-serif font-bold text-base text-ledger-green block">
               {reportTotals.billsPaidOnTimeCount} of {reportTotals.billsPaidOnTimeCount} Cycles
             </span>
           </div>
 
-          <div className="p-3 rounded-lg bg-paper-2 border border-rule">
+          <div className="p-3.5 rounded-2xl bg-slate-100 border border-rule">
             <span className="text-ink-soft text-[10px] block">Savings Discipline Rate</span>
             <span className="font-serif font-bold text-base text-ink block">
               {reportTotals.savingsRatePercent !== null ? `${reportTotals.savingsRatePercent}% of inflow` : "Calibrating"}
             </span>
           </div>
 
-          <div className="p-3 rounded-lg bg-paper-2 border border-rule">
+          <div className="p-3.5 rounded-2xl bg-slate-100 border border-rule">
             <span className="text-ink-soft text-[10px] block">Max Credit Cost Paid</span>
             <span className="font-serif font-bold text-base text-ink block">
               ₹{reportTotals.maxCreditCostRupees} Total
@@ -154,13 +154,13 @@ export default function ReportCardBuilderPage() {
       </div>
 
       {/* Sharing Actions */}
-      <div className="p-5 rounded-xl bg-paper-2 border border-rule space-y-4">
+      <div className="p-5 rounded-2xl bg-white border border-rule space-y-4">
         {!activeToken ? (
           <div className="space-y-3">
             <button
               onClick={handleGenerateShareToken}
               disabled={loading}
-              className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-ledger-green text-paper font-mono font-bold text-xs hover:bg-[#23472c] transition-colors flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-pin-red text-white font-mono font-bold text-xs hover:bg-pin-pressed transition-colors flex items-center justify-center gap-2 cursor-pointer"
             >
               <Share2 className="w-3.5 h-3.5" />
               <span>{loading ? "Generating Link..." : "Create Private Share Link"}</span>
@@ -180,7 +180,7 @@ export default function ReportCardBuilderPage() {
                   type="text"
                   readOnly
                   value={shareUrl || ""}
-                  className="flex-1 p-2 rounded bg-paper border border-rule font-mono text-xs text-ink select-all"
+                  className="flex-1 p-2 rounded-xl bg-slate-100 border border-rule font-mono text-xs text-ink select-all"
                 />
                 <button
                   onClick={() => {
@@ -188,14 +188,14 @@ export default function ReportCardBuilderPage() {
                     setCopied(true);
                     setTimeout(() => setCopied(false), 2000);
                   }}
-                  className="px-3 py-2 rounded bg-paper border border-rule text-ink font-mono text-xs font-bold hover:bg-paper-2 cursor-pointer"
+                  className="px-3.5 py-2 rounded-full bg-[#e5e5e0] hover:bg-[#dadad3] border-transparent text-[#111110] font-mono text-xs font-bold cursor-pointer"
                 >
                   {copied ? "Copied" : "Copy"}
                 </button>
                 <NextLink
                   href={`/report/${activeToken}`}
                   target="_blank"
-                  className="p-2 rounded bg-paper border border-rule text-ink hover:bg-paper-2"
+                  className="p-2 rounded-full bg-[#e5e5e0] hover:bg-[#dadad3] border-transparent text-[#111110]"
                   title="Open viewer"
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -206,14 +206,14 @@ export default function ReportCardBuilderPage() {
             <div className="flex items-center justify-between pt-2 border-t border-rule/60">
               <button
                 onClick={handleRevokeToken}
-                className="px-4 py-2 rounded-lg bg-red-700 text-paper font-mono font-bold text-xs hover:bg-red-800 transition-colors flex items-center gap-1.5 cursor-pointer"
+                className="px-4 py-2 rounded-full bg-vermilion text-white font-mono font-bold text-xs hover:opacity-90 transition-colors flex items-center gap-1.5 cursor-pointer"
               >
                 <Trash2 className="w-3.5 h-3.5" />
                 <span>Revoke Access Immediately</span>
               </button>
             </div>
 
-            <div className="p-3 rounded-lg bg-marigold/10 border border-marigold/40 text-[11px] text-ink font-sans">
+            <div className="p-3.5 rounded-2xl bg-marigold/10 border border-marigold/40 text-[11px] text-ink font-sans">
               <strong>Warning:</strong> Revoking invalidates the private link immediately (returns 404). However,
               revoking cannot take back physical screenshots or copies already made by viewers.
             </div>
@@ -229,7 +229,7 @@ export default function ReportCardBuilderPage() {
 
         <NextLink
           href="/learn"
-          className="px-6 py-3 rounded-lg bg-ledger-green text-paper font-mono font-bold text-xs shadow hover:bg-[#23472c] transition-colors flex items-center gap-2"
+          className="px-6 py-2.5 rounded-full bg-pin-red text-white font-mono font-bold text-xs hover:bg-pin-pressed transition-colors flex items-center gap-2 cursor-pointer"
         >
           <span>Next: Financial Learn Hub</span>
           <ArrowRight className="w-4 h-4" />
